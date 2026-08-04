@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shelter Dispatches — Ukraine Field Journal</title>
+<title>Field Notes — Shelter Dispatches</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -109,114 +109,102 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
   .nav-links{display:none}
 }
 </style>
-<style>
-.hero{background:var(--navy);color:#fff;padding:70px 5vw 60px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(135deg,rgba(200,160,48,.08) 0%,transparent 60%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1200px;margin:0 auto;align-items:center}
-.hero-eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ua-gold);margin-bottom:18px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4.5vw,56px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
-.hero h1 em{font-style:italic;color:var(--ua-gold)}
-.hero-desc{font-size:16px;line-height:1.7;color:rgba(255,255,255,.65);max-width:420px;font-weight:300}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-top:2px solid var(--ua-gold);padding:22px 20px}
-.stat-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.03em}
-.stat-num sup{font-size:.5em;vertical-align:super}
-.stat-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:6px;line-height:1.4}
-.featured-post{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--border);margin-bottom:56px;overflow:hidden;transition:box-shadow .25s}
-.featured-post:hover{box-shadow:0 8px 40px rgba(30,30,110,.1)}
-.featured-img{background:var(--navy);min-height:340px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
-.fi-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 12px),linear-gradient(160deg,#1E1E6E 0%,#0E0E3A 100%)}
-.featured-cat{position:relative;z-index:2;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;background:var(--ua-gold);color:var(--navy);display:inline-block;padding:4px 10px;font-weight:700;margin-bottom:12px}
-.fi-loc{position:relative;z-index:2;font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase}
-.featured-body{padding:36px;display:flex;flex-direction:column;justify-content:space-between}
-.post-meta{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.post-date{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
-.post-loc{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:var(--green);text-transform:uppercase}
-.featured-title{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:700;line-height:1.2;letter-spacing:-.01em;margin-bottom:14px;color:var(--ink)}
-.featured-excerpt{font-size:15px;color:var(--body);line-height:1.7;font-weight:300;margin-bottom:24px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-stats{grid-template-columns:1fr 1fr}.featured-post{grid-template-columns:1fr}.featured-img{min-height:180px}}
-</style>
 </head>
 <body>
 
 <div class="ua-stripe"></div>
 <nav>
   <a class="nav-logo" href="index.html">Shelter <strong>Dispatches</strong></a>
-  <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li>
-<li><a href="field-notes.html">Field Notes</a></li>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li>
+<li><a href="field-notes.html" class="active">Field Notes</a></li>
 <li><a href="methodology.html">Methodology</a></li>
 <li><a href="policy.html">Policy</a></li>
 <li><a href="about.html">About</a></li>
 </ul>
 </nav>
-<section class="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-eyebrow">Ukraine · Shelter Response · Field Journal</div>
-      <h1>Where walls<br>still <em>stand,</em><br>and where<br>they don't.</h1>
-      <p class="hero-desc">Dispatches, methodology, and field notes from Ukraine's shelter response — for practitioners, policymakers, and anyone working to rebuild dignified housing in conflict-affected communities.</p>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-card"><div class="stat-num">2M<sup>+</sup></div><div class="stat-label">Housing units damaged or destroyed since Feb 2022</div></div>
-      <div class="stat-card"><div class="stat-num">3.5M</div><div class="stat-label">Internally displaced persons across Ukraine</div></div>
-      <div class="stat-card"><div class="stat-num">8</div><div class="stat-label">Oblasts in the Shelter Cluster Crescent Zone</div></div>
-      <div class="stat-card"><div class="stat-num">$486<sup>B</sup></div><div class="stat-label">Estimated reconstruction needs (World Bank, 2024)</div></div>
-    </div>
+<div class="page-header">
+  <div class="ph-inner">
+    <div class="ph-eyebrow">From the ground · Ukraine</div>
+    <h1 class="ph-title">Field <em>Notes</em></h1>
+    <p class="ph-desc">Operational reports, site observations, and practitioner perspectives from shelter programmes across conflict-affected oblasts.</p>
   </div>
-</section>
+</div>
 <div class="gold-rule"></div>
 <div class="main-wrap">
-  <div class="section-label">Latest Dispatch</div>
-  <article class="featured-post">
-    <div class="featured-img">
-      <div class="fi-bg"></div>
-      <span class="featured-cat">Field Report</span>
-      <div class="fi-loc">Kharkiv Oblast · April 2026</div>
-    </div>
-    <div class="featured-body">
-      <div>
-        <div class="post-meta">
-          <span class="post-date">28 April 2026</span>
-          <span class="post-loc">📍 Kharkiv Oblast</span>
+  <div class="two-col">
+    <div>
+      <div class="section-label">All Dispatches</div>
+      <div class="doc-list">
+        <div class="big-card">
+          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">01</div></div>
+          <div class="bc-body">
+            <div>
+              <div class="bc-meta"><span class="card-cat cat-field">Field Report</span><span class="bc-date">28 Apr 2026</span><span class="bc-loc">📍 Kharkiv</span></div>
+              <h3 class="bc-title">Hard Repairs at Scale: Why Category 2 Can't Wait Any Longer</h3>
+              <p class="bc-excerpt">Light and medium repair need is visibly declining across the Crescent Zone. What remains is structurally complex Category 2 work — and the backlog is growing faster than the response can absorb it.</p>
+            </div>
+            <a class="read-more" href="#">Read dispatch</a>
+          </div>
         </div>
-        <h2 class="featured-title">Hard Repairs at Scale: Why Category 2 Can't Wait Any Longer</h2>
-        <p class="featured-excerpt">Three years into the response, the easy work is done. Light and medium repairs have been delivered to tens of thousands of households — and the need for them is visibly declining. What remains is harder, more expensive, and structurally more complex. Category 2 demand is accelerating, driven by new damage and a growing backlog of households that were assessed, found ineligible for Cat. 1, and have been waiting ever since.</p>
+        <div class="big-card">
+          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">02</div></div>
+          <div class="bc-body">
+            <div>
+              <div class="bc-meta"><span class="card-cat cat-energy">Hybrid Energy</span><span class="bc-date">14 Apr 2026</span><span class="bc-loc">📍 Zaporizhzhia</span></div>
+              <h3 class="bc-title">Solar + Generator: The Only Heating Logic That Survives Winter</h3>
+              <p class="bc-excerpt">After two winters of rolling blackouts, centralised heating can no longer be relied upon. This post walks through what a working hybrid energy system looks like at the household level — and what it realistically costs.</p>
+            </div>
+            <a class="read-more" href="#">Read dispatch</a>
+          </div>
+        </div>
+        <div class="big-card">
+          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">03</div></div>
+          <div class="bc-body">
+            <div>
+              <div class="bc-meta"><span class="card-cat cat-cccm">CCCM</span><span class="bc-date">2 Apr 2026</span><span class="bc-loc">📍 Dnipro</span></div>
+              <h3 class="bc-title">Collective Centres Are Not a Temporary Solution Anymore</h3>
+              <p class="bc-excerpt">They were never meant to last four years. For an estimated 300,000 IDPs in Ukraine, a dormitory or repurposed school is now home — and systematic rehabilitation of this stock is the only dignified answer.</p>
+            </div>
+            <a class="read-more" href="#">Read dispatch</a>
+          </div>
+        </div>
+        <div class="big-card">
+          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">04</div></div>
+          <div class="bc-body">
+            <div>
+              <div class="bc-meta"><span class="card-cat cat-field">Field Note</span><span class="bc-date">20 Feb 2026</span><span class="bc-loc">📍 Sumska Oblast</span></div>
+              <h3 class="bc-title">Insulation in Rural Communities: The Gap Nobody Talks About</h3>
+              <p class="bc-excerpt">Urban repair programmes reach city households. But villages in Kharkivska and Sumska with 80% war damage rates often have no humanitarian presence at all. Insulation needs are acute — and unaddressed.</p>
+            </div>
+            <a class="read-more" href="#">Read dispatch</a>
+          </div>
+        </div>
       </div>
-      <a class="read-more" href="field-notes.html">Read all field notes</a>
     </div>
-  </article>
-  <div class="section-label">Recent Posts</div>
-  <div class="posts-grid">
-    <a class="post-card" href="field-notes.html">
-      <div class="card-top"><span class="card-cat cat-energy">Hybrid Energy</span><h3 class="card-title">Solar + Generator: The Only Heating Logic That Survives Winter</h3></div>
-      <p class="card-excerpt">Centralised grid heating has become unreliable. After two winters of rolling blackouts, households without a hybrid backup are effectively unheated.</p>
-      <div class="card-footer"><span class="card-date">14 Apr 2026</span><span class="card-loc">Zaporizhzhia</span></div>
-    </a>
-    <a class="post-card" href="field-notes.html">
-      <div class="card-top"><span class="card-cat cat-cccm">CCCM</span><h3 class="card-title">Collective Centres Are Not a Temporary Solution Anymore</h3></div>
-      <p class="card-excerpt">They were never meant to last four years. But for an estimated 300,000 IDPs, a dormitory or repurposed school is now home.</p>
-      <div class="card-footer"><span class="card-date">2 Apr 2026</span><span class="card-loc">Dnipro</span></div>
-    </a>
-    <a class="post-card" href="policy.html">
-      <div class="card-top"><span class="card-cat cat-policy">Policy</span><h3 class="card-title">eVidnovlennia at Three Years: Gaps, Overlaps, and What Humanitarian Actors Fill</h3></div>
-      <p class="card-excerpt">Ukraine's state compensation programme has disbursed over 70 billion UAH. But the average payout covers perhaps 40% of actual repair costs.</p>
-      <div class="card-footer"><span class="card-date">18 Mar 2026</span><span class="card-loc">Kherson</span></div>
-    </a>
-    <a class="post-card" href="policy.html">
-      <div class="card-top"><span class="card-cat cat-law">Policy</span><h3 class="card-title">Law No. 12377: What Ukraine's New Housing Principles Mean for NGOs</h3></div>
-      <p class="card-excerpt">Article 29 on Social Housing is the most operationally relevant for shelter practitioners working on municipal stock rehabilitation.</p>
-      <div class="card-footer"><span class="card-date">5 Mar 2026</span><span class="card-loc">Kyiv</span></div>
-    </a>
-    <a class="post-card" href="field-notes.html">
-      <div class="card-top"><span class="card-cat cat-field">Field Note</span><h3 class="card-title">Insulation in Rural Communities: The Gap Nobody Talks About</h3></div>
-      <p class="card-excerpt">Villages in Kharkivska and Sumska with 80% war damage rates often have no humanitarian presence at all. Insulation needs are acute — and unaddressed.</p>
-      <div class="card-footer"><span class="card-date">20 Feb 2026</span><span class="card-loc">Sumska Oblast</span></div>
-    </a>
-    <a class="post-card" href="methodology.html">
-      <div class="card-top"><span class="card-cat cat-infra">Infrastructure</span><h3 class="card-title">From Rubble to Roads: Construction Waste as a Resource</h3></div>
-      <p class="card-excerpt">Crushed construction debris mixed with slag cement binders can be used directly for road base. A small pilot could be among the first in Ukraine.</p>
-      <div class="card-footer"><span class="card-date">25 Mar 2026</span><span class="card-loc">Lviv · S3 Conference</span></div>
-    </a>
+    <div class="sidebar">
+      <div class="sidebar-box">
+        <div class="sb-label">Filter by Oblast</div>
+        <a class="sb-tag" href="#">📍 Kharkivska</a>
+        <a class="sb-tag" href="#">📍 Dnipropetrovska</a>
+        <a class="sb-tag" href="#">📍 Zaporizka</a>
+        <a class="sb-tag" href="#">📍 Khersonska</a>
+        <a class="sb-tag" href="#">📍 Donetska</a>
+        <a class="sb-tag" href="#">📍 Sumska</a>
+        <a class="sb-tag" href="#">📍 Mykolaivska</a>
+        <a class="sb-tag" href="#">📍 Chernihivska</a>
+      </div>
+      <div class="sidebar-box">
+        <div class="sb-label">Topics</div>
+        <a class="sb-tag" href="#">Cat. 1 Repairs</a>
+        <a class="sb-tag" href="#">Cat. 2 Repairs</a>
+        <a class="sb-tag" href="#">Hybrid Energy</a>
+        <a class="sb-tag" href="#">CCCM</a>
+        <a class="sb-tag" href="#">Insulation</a>
+        <a class="sb-tag" href="#">Modular Housing</a>
+        <a class="sb-tag" href="#">Demolition</a>
+        <a class="sb-tag" href="#">Social Housing</a>
+      </div>
+    </div>
   </div>
 </div>
 
