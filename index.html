@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Shelter Dispatches — Ukraine Field Journal</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:#1E1E6E; --gold:#C8A030; --green:#2E6E4E;
-  --paper:#F4F1EA; --ink:#1A1A2E; --body:#3D3D4E;
-  --muted:#7A7A8C; --border:#DDD8CC; --card:#FFFFFF;
-  --ua-blue:#005BBB; --ua-gold:#FFD500;
-  --red:#8E1A1A;
-}
+:root{--navy:#1E1E6E;--gold:#C8A030;--green:#2E6E4E;--paper:#F4F1EA;--ink:#1A1A2E;--body:#3D3D4E;--muted:#7A7A8C;--border:#DDD8CC;--ua-blue:#005BBB;--ua-gold:#FFD500}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .ua-stripe{height:5px;background:linear-gradient(90deg,var(--ua-blue) 50%,var(--ua-gold) 50%)}
 nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.25)}
-.nav-logo{font-family:'Space Mono',monospace;font-size:13px;color:#fff;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.9}
+.nav-logo{font-family:'Space Mono',monospace;font-size:13px;color:#fff;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
 .nav-logo strong{color:var(--ua-gold)}
 .nav-links{display:flex;gap:0;list-style:none}
 .nav-links a{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:0 16px;height:58px;display:flex;align-items:center;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
@@ -37,77 +29,22 @@ nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify
 .main-wrap{max-width:1200px;margin:0 auto;padding:0 5vw}
 .section-label{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:40px 0 20px;border-bottom:1px solid var(--border);margin-bottom:32px;display:flex;align-items:center;gap:12px}
 .section-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--gold)}
-.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px}
-.post-card{background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;cursor:pointer;text-decoration:none;color:inherit}
-.post-card:hover{box-shadow:0 6px 30px rgba(30,30,110,.09);transform:translateY(-2px)}
-.card-top{padding:20px 22px 0}
 .card-cat{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:3px 8px;display:inline-block;margin-bottom:12px}
-.cat-repair{background:#EEF0F8;color:#1E1E6E}
+.cat-field{background:#FFF0F0;color:#8E1A1A}
 .cat-energy{background:#FFF7E0;color:#8A5C00}
 .cat-cccm{background:#EDF8F3;color:#1A5C3A}
 .cat-policy{background:#F5EEF8;color:#5B2D8E}
-.cat-field{background:#FFF0F0;color:#8E1A1A}
+.cat-repair{background:#EEF0F8;color:#1E1E6E}
 .cat-infra{background:#E8F4FF;color:#0A4A7A}
 .cat-sop{background:#F0F8EE;color:#2A5C1A}
-.cat-tech{background:#FFF4E8;color:#7A3C00}
 .cat-law{background:#F0EEF8;color:#3A1A6E}
-.card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.25;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
-.card-excerpt{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;padding:0 22px;margin-bottom:16px}
-.card-footer{margin-top:auto;padding:14px 22px 18px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.card-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
-.card-loc{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
-.two-col{display:grid;grid-template-columns:2fr 1fr;gap:48px;margin-bottom:56px;align-items:start}
-.sidebar{display:flex;flex-direction:column;gap:16px}
-.sidebar-box{background:#fff;border:1px solid var(--border);padding:22px}
-.sb-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-.sb-tag{display:block;font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);padding:8px 0;border-bottom:1px solid #f0ede6;text-decoration:none;transition:color .2s}
-.sb-tag:hover{color:var(--gold)}
-.sb-tag:last-child{border-bottom:none}
-.big-card{background:#fff;border:1px solid var(--border);margin-bottom:24px;display:grid;grid-template-columns:200px 1fr;overflow:hidden;transition:box-shadow .25s}
-.big-card:hover{box-shadow:0 6px 30px rgba(30,30,110,.09)}
-.bc-img{background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;position:relative;overflow:hidden}
-.bc-img-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 10px),linear-gradient(160deg,#1E1E6E 0%,#0E0E3A 100%)}
-.bc-num{position:relative;z-index:2;font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:rgba(255,255,255,.12);line-height:1}
-.bc-body{padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between}
-.bc-meta{display:flex;gap:12px;margin-bottom:10px;align-items:center}
-.bc-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
-.bc-loc{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
-.bc-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
-.bc-excerpt{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;margin-bottom:16px}
-.read-more{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px;display:inline-block;transition:color .2s}
-.read-more:hover{color:var(--gold)}
-.read-more::after{content:' →'}
-.doc-list{display:flex;flex-direction:column;gap:16px;margin-bottom:56px}
-.doc-item{background:#fff;border:1px solid var(--border);padding:22px 26px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;transition:box-shadow .2s}
-.doc-item:hover{box-shadow:0 4px 20px rgba(30,30,110,.08)}
-.doc-icon{font-size:26px}
-.doc-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.doc-desc{font-size:13px;color:var(--muted);font-weight:300;line-height:1.5}
-.doc-tag{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;background:var(--paper);border:1px solid var(--border);color:var(--muted);white-space:nowrap}
-.about-coming{max-width:600px;margin:60px auto;text-align:center;padding:0 5vw}
-.ac-icon{font-size:48px;margin-bottom:24px}
-.ac-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px}
-.ac-title em{font-style:italic;color:var(--navy)}
-.ac-text{font-size:15px;color:var(--body);line-height:1.75;font-weight:300;margin-bottom:28px}
-.ac-quote{border-left:3px solid var(--gold);padding:14px 20px;text-align:left;background:#fff;border-radius:0;font-style:italic;color:var(--muted);font-size:14px;line-height:1.6}
+.cat-tech{background:#FFF4E8;color:#7A3C00}
 footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .footer-logo strong{color:var(--ua-gold)}
 .footer-copy{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.22);text-transform:uppercase}
-@media(max-width:900px){
-  .posts-grid{grid-template-columns:1fr 1fr}
-  .two-col{grid-template-columns:1fr}
-  .sidebar{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .big-card{grid-template-columns:1fr}
-  .bc-img{min-height:100px}
-  .doc-item{grid-template-columns:auto 1fr;gap:14px}
-  .doc-tag{display:none}
-}
-@media(max-width:600px){
-  .posts-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
-}
+@media(max-width:600px){.nav-links{display:none}}
 </style>
 <style>
 .hero{background:var(--navy);color:#fff;padding:70px 5vw 60px;position:relative;overflow:hidden}
@@ -122,109 +59,107 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
 .stat-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.03em}
 .stat-num sup{font-size:.5em;vertical-align:super}
 .stat-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:6px;line-height:1.4}
-.featured-post{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--border);margin-bottom:56px;overflow:hidden;transition:box-shadow .25s}
-.featured-post:hover{box-shadow:0 8px 40px rgba(30,30,110,.1)}
-.featured-img{background:var(--navy);min-height:340px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
-.fi-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 12px),linear-gradient(160deg,#1E1E6E 0%,#0E0E3A 100%)}
-.featured-cat{position:relative;z-index:2;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;background:var(--ua-gold);color:var(--navy);display:inline-block;padding:4px 10px;font-weight:700;margin-bottom:12px}
-.fi-loc{position:relative;z-index:2;font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase}
-.featured-body{padding:36px;display:flex;flex-direction:column;justify-content:space-between}
-.post-meta{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.post-date{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
-.post-loc{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:var(--green);text-transform:uppercase}
-.featured-title{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:700;line-height:1.2;letter-spacing:-.01em;margin-bottom:14px;color:var(--ink)}
-.featured-excerpt{font-size:15px;color:var(--body);line-height:1.7;font-weight:300;margin-bottom:24px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-stats{grid-template-columns:1fr 1fr}.featured-post{grid-template-columns:1fr}.featured-img{min-height:180px}}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px}
+.post-card{background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;text-decoration:none;color:inherit}
+.post-card:hover{box-shadow:0 6px 30px rgba(30,30,110,.09);transform:translateY(-2px)}
+.card-top{padding:20px 22px 0}
+.card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:10px}
+.card-excerpt{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;padding:0 22px;margin-bottom:16px}
+.card-footer{margin-top:auto;padding:14px 22px 18px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.card-loc{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
+.featured{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--border);margin-bottom:56px;overflow:hidden;transition:box-shadow .25s;text-decoration:none;color:inherit}
+.featured:hover{box-shadow:0 8px 40px rgba(30,30,110,.1)}
+.feat-img{background:var(--navy);min-height:320px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;overflow:hidden}
+.feat-img-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 12px),linear-gradient(160deg,#1E1E6E,#0E0E3A)}
+.feat-cat{position:relative;z-index:2;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;background:var(--ua-gold);color:var(--navy);display:inline-block;padding:4px 10px;font-weight:700;margin-bottom:10px}
+.feat-loc{position:relative;z-index:2;font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase}
+.feat-body{padding:36px;display:flex;flex-direction:column;justify-content:space-between}
+.feat-meta{display:flex;gap:14px;margin-bottom:14px}
+.feat-date{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.feat-title{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:700;line-height:1.2;margin-bottom:14px;color:var(--ink)}
+.feat-excerpt{font-size:15px;color:var(--body);line-height:1.7;font-weight:300;margin-bottom:24px}
+.read-more{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px;display:inline-block}
+.read-more::after{content:' →'}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.featured{grid-template-columns:1fr}.posts-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.posts-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <div class="ua-stripe"></div>
 <nav>
   <a class="nav-logo" href="index.html">Shelter <strong>Dispatches</strong></a>
-  <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li>
-<li><a href="field-notes.html">Field Notes</a></li>
-<li><a href="methodology.html">Methodology</a></li>
-<li><a href="policy.html">Policy</a></li>
-<li><a href="about.html">About</a></li>
-</ul>
+  <ul class="nav-links"><li><a href="index.html"class="active">Home</a></li><li><a href="field-notes.html">Field Notes</a></li><li><a href="methodology.html">Methodology</a></li><li><a href="policy.html">Policy</a></li><li><a href="about.html">About</a></li></ul>
 </nav>
 <section class="hero">
   <div class="hero-grid">
     <div>
       <div class="hero-eyebrow">Ukraine · Shelter Response · Field Journal</div>
-      <h1>Where walls<br>still <em>stand,</em><br>and where<br>they don't.</h1>
+      <h1>Where walls still <em>stand,</em><br>and where they don't.</h1>
       <p class="hero-desc">Dispatches, methodology, and field notes from Ukraine's shelter response — for practitioners, policymakers, and anyone working to rebuild dignified housing in conflict-affected communities.</p>
     </div>
     <div class="hero-stats">
       <div class="stat-card"><div class="stat-num">2M<sup>+</sup></div><div class="stat-label">Housing units damaged or destroyed since Feb 2022</div></div>
       <div class="stat-card"><div class="stat-num">3.5M</div><div class="stat-label">Internally displaced persons across Ukraine</div></div>
       <div class="stat-card"><div class="stat-num">8</div><div class="stat-label">Oblasts in the Shelter Cluster Crescent Zone</div></div>
-      <div class="stat-card"><div class="stat-num">$486<sup>B</sup></div><div class="stat-label">Estimated reconstruction needs (World Bank, 2024)</div></div>
+      <div class="stat-card"><div class="stat-num">$486<sup>B</sup></div><div class="stat-label">Estimated reconstruction needs (World Bank 2024)</div></div>
     </div>
   </div>
 </section>
 <div class="gold-rule"></div>
 <div class="main-wrap">
   <div class="section-label">Latest Dispatch</div>
-  <article class="featured-post">
-    <div class="featured-img">
-      <div class="fi-bg"></div>
-      <span class="featured-cat">Field Report</span>
-      <div class="fi-loc">Kharkiv Oblast · April 2026</div>
+  <a class="featured" href="post-hard-repairs.html">
+    <div class="feat-img">
+      <div class="feat-img-bg"></div>
+      <span class="feat-cat">Field Report</span>
+      <div class="feat-loc">Kharkiv Oblast · April 2026</div>
     </div>
-    <div class="featured-body">
+    <div class="feat-body">
       <div>
-        <div class="post-meta">
-          <span class="post-date">28 April 2026</span>
-          <span class="post-loc">📍 Kharkiv Oblast</span>
-        </div>
-        <h2 class="featured-title">Hard Repairs at Scale: Why Category 2 Can't Wait Any Longer</h2>
-        <p class="featured-excerpt">Three years into the response, the easy work is done. Light and medium repairs have been delivered to tens of thousands of households — and the need for them is visibly declining. What remains is harder, more expensive, and structurally more complex. Category 2 demand is accelerating, driven by new damage and a growing backlog of households that were assessed, found ineligible for Cat. 1, and have been waiting ever since.</p>
+        <div class="feat-meta"><span class="feat-date">28 April 2026</span><span style="font-family:Space Mono,monospace;font-size:9px;color:var(--green);text-transform:uppercase;letter-spacing:.08em">📍 Kharkiv Oblast</span></div>
+        <div class="feat-title">Hard Repairs at Scale: Why Category 2 Can't Wait Any Longer</div>
+        <p class="feat-excerpt">Three years into the response, the easy work is done. Light and medium repairs are declining across the Crescent Zone. What remains is harder, more expensive, and structurally more complex. Category 2 demand is accelerating — and no systematic response exists at scale.</p>
       </div>
-      <a class="read-more" href="field-notes.html">Read all field notes</a>
+      <span class="read-more">Read dispatch</span>
     </div>
-  </article>
+  </a>
   <div class="section-label">Recent Posts</div>
   <div class="posts-grid">
-    <a class="post-card" href="field-notes.html">
-      <div class="card-top"><span class="card-cat cat-energy">Hybrid Energy</span><h3 class="card-title">Solar + Generator: The Only Heating Logic That Survives Winter</h3></div>
-      <p class="card-excerpt">Centralised grid heating has become unreliable. After two winters of rolling blackouts, households without a hybrid backup are effectively unheated.</p>
+    <a class="post-card" href="post-hard-repairs.html">
+      <div class="card-top"><span class="card-cat cat-energy">Hybrid Energy</span><div class="card-title">Solar + Generator: The Only Heating Logic That Survives Winter</div></div>
+      <p class="card-excerpt">After two winters of rolling blackouts, centralised heating can no longer be relied upon.</p>
       <div class="card-footer"><span class="card-date">14 Apr 2026</span><span class="card-loc">Zaporizhzhia</span></div>
     </a>
-    <a class="post-card" href="field-notes.html">
-      <div class="card-top"><span class="card-cat cat-cccm">CCCM</span><h3 class="card-title">Collective Centres Are Not a Temporary Solution Anymore</h3></div>
-      <p class="card-excerpt">They were never meant to last four years. But for an estimated 300,000 IDPs, a dormitory or repurposed school is now home.</p>
+    <a class="post-card" href="post-hard-repairs.html">
+      <div class="card-top"><span class="card-cat cat-cccm">CCCM</span><div class="card-title">Collective Centres Are Not a Temporary Solution Anymore</div></div>
+      <p class="card-excerpt">They were never meant to last four years. For 300,000 IDPs, a repurposed school is now home.</p>
       <div class="card-footer"><span class="card-date">2 Apr 2026</span><span class="card-loc">Dnipro</span></div>
     </a>
-    <a class="post-card" href="policy.html">
-      <div class="card-top"><span class="card-cat cat-policy">Policy</span><h3 class="card-title">eVidnovlennia at Three Years: Gaps, Overlaps, and What Humanitarian Actors Fill</h3></div>
-      <p class="card-excerpt">Ukraine's state compensation programme has disbursed over 70 billion UAH. But the average payout covers perhaps 40% of actual repair costs.</p>
+    <a class="post-card" href="post-hard-repairs.html">
+      <div class="card-top"><span class="card-cat cat-policy">Policy</span><div class="card-title">eVidnovlennia at Three Years: Gaps, Overlaps, and What NGOs Fill</div></div>
+      <p class="card-excerpt">The average state payout covers 40% of actual repair costs. The gap is structural — and permanent.</p>
       <div class="card-footer"><span class="card-date">18 Mar 2026</span><span class="card-loc">Kherson</span></div>
     </a>
-    <a class="post-card" href="policy.html">
-      <div class="card-top"><span class="card-cat cat-law">Policy</span><h3 class="card-title">Law No. 12377: What Ukraine's New Housing Principles Mean for NGOs</h3></div>
-      <p class="card-excerpt">Article 29 on Social Housing is the most operationally relevant for shelter practitioners working on municipal stock rehabilitation.</p>
+    <a class="post-card" href="post-hard-repairs.html">
+      <div class="card-top"><span class="card-cat cat-law cat-policy">Policy</span><div class="card-title">Law No. 12377: What Ukraine's New Housing Law Means for NGOs</div></div>
+      <p class="card-excerpt">Article 29 on Social Housing is the most operationally relevant provision for shelter practitioners.</p>
       <div class="card-footer"><span class="card-date">5 Mar 2026</span><span class="card-loc">Kyiv</span></div>
     </a>
-    <a class="post-card" href="field-notes.html">
-      <div class="card-top"><span class="card-cat cat-field">Field Note</span><h3 class="card-title">Insulation in Rural Communities: The Gap Nobody Talks About</h3></div>
-      <p class="card-excerpt">Villages in Kharkivska and Sumska with 80% war damage rates often have no humanitarian presence at all. Insulation needs are acute — and unaddressed.</p>
+    <a class="post-card" href="post-hard-repairs.html">
+      <div class="card-top"><span class="card-cat cat-field">Field Note</span><div class="card-title">Insulation in Rural Communities: The Gap Nobody Talks About</div></div>
+      <p class="card-excerpt">Villages with 80% war damage and zero humanitarian presence. Insulation needs are acute — and unaddressed.</p>
       <div class="card-footer"><span class="card-date">20 Feb 2026</span><span class="card-loc">Sumska Oblast</span></div>
     </a>
-    <a class="post-card" href="methodology.html">
-      <div class="card-top"><span class="card-cat cat-infra">Infrastructure</span><h3 class="card-title">From Rubble to Roads: Construction Waste as a Resource</h3></div>
-      <p class="card-excerpt">Crushed construction debris mixed with slag cement binders can be used directly for road base. A small pilot could be among the first in Ukraine.</p>
+    <a class="post-card" href="post-hard-repairs.html">
+      <div class="card-top"><span class="card-cat cat-infra">Infrastructure</span><div class="card-title">From Rubble to Roads: Construction Waste as a Resource</div></div>
+      <p class="card-excerpt">CDW + slag cement binders for road base construction. A small pilot could be the first in Ukraine.</p>
       <div class="card-footer"><span class="card-date">25 Mar 2026</span><span class="card-loc">Lviv · S3 Conference</span></div>
     </a>
   </div>
 </div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Shelter <strong>Dispatches</strong> · Ukraine</div>
-    <div class="footer-copy">Field journal on humanitarian shelter response · 2024–2026</div>
-  </div>
-</footer>
-</body>
-</html>
+<footer><div class="footer-inner">
+  <div class="footer-logo">Shelter <strong>Dispatches</strong> · Ukraine</div>
+  <div class="footer-copy">Field journal on humanitarian shelter response · 2024–2026</div>
+</div></footer>
+</body></html>
