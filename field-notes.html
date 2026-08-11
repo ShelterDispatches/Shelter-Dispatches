@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Field Notes — Shelter Dispatches</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:#1E1E6E; --gold:#C8A030; --green:#2E6E4E;
-  --paper:#F4F1EA; --ink:#1A1A2E; --body:#3D3D4E;
-  --muted:#7A7A8C; --border:#DDD8CC; --card:#FFFFFF;
-  --ua-blue:#005BBB; --ua-gold:#FFD500;
-  --red:#8E1A1A;
-}
+:root{--navy:#1E1E6E;--gold:#C8A030;--green:#2E6E4E;--paper:#F4F1EA;--ink:#1A1A2E;--body:#3D3D4E;--muted:#7A7A8C;--border:#DDD8CC;--ua-blue:#005BBB;--ua-gold:#FFD500}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .ua-stripe{height:5px;background:linear-gradient(90deg,var(--ua-blue) 50%,var(--ua-gold) 50%)}
 nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.25)}
-.nav-logo{font-family:'Space Mono',monospace;font-size:13px;color:#fff;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.9}
+.nav-logo{font-family:'Space Mono',monospace;font-size:13px;color:#fff;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
 .nav-logo strong{color:var(--ua-gold)}
 .nav-links{display:flex;gap:0;list-style:none}
 .nav-links a{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:0 16px;height:58px;display:flex;align-items:center;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
 .nav-links a:hover{color:#fff}
 .nav-links a.active{color:#fff;border-bottom-color:var(--ua-gold)}
 .gold-rule{height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.card-cat{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:3px 8px;display:inline-block;margin-bottom:12px}
+.cat-field{background:#FFF0F0;color:#8E1A1A}
+.cat-energy{background:#FFF7E0;color:#8A5C00}
+.cat-cccm{background:#EDF8F3;color:#1A5C3A}
+.cat-policy{background:#F5EEF8;color:#5B2D8E}
+.cat-repair{background:#EEF0F8;color:#1E1E6E}
+.cat-infra{background:#E8F4FF;color:#0A4A7A}
+.cat-opinion{background:#F4F1EA;color:#6A5A3E}
+footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.footer-logo strong{color:var(--ua-gold)}
+.footer-copy{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.22);text-transform:uppercase}
+@media(max-width:600px){.nav-links{display:none}}
+</style>
+<style>
 .page-header{background:var(--navy);color:#fff;padding:52px 5vw 44px;position:relative;overflow:hidden}
 .page-header::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(135deg,rgba(200,160,48,.07) 0%,transparent 60%);pointer-events:none}
 .ph-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
@@ -37,90 +45,34 @@ nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify
 .main-wrap{max-width:1200px;margin:0 auto;padding:0 5vw}
 .section-label{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:40px 0 20px;border-bottom:1px solid var(--border);margin-bottom:32px;display:flex;align-items:center;gap:12px}
 .section-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--gold)}
-.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px}
-.post-card{background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;cursor:pointer;text-decoration:none;color:inherit}
-.post-card:hover{box-shadow:0 6px 30px rgba(30,30,110,.09);transform:translateY(-2px)}
-.card-top{padding:20px 22px 0}
-.card-cat{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:3px 8px;display:inline-block;margin-bottom:12px}
-.cat-repair{background:#EEF0F8;color:#1E1E6E}
-.cat-energy{background:#FFF7E0;color:#8A5C00}
-.cat-cccm{background:#EDF8F3;color:#1A5C3A}
-.cat-policy{background:#F5EEF8;color:#5B2D8E}
-.cat-field{background:#FFF0F0;color:#8E1A1A}
-.cat-infra{background:#E8F4FF;color:#0A4A7A}
-.cat-sop{background:#F0F8EE;color:#2A5C1A}
-.cat-tech{background:#FFF4E8;color:#7A3C00}
-.cat-law{background:#F0EEF8;color:#3A1A6E}
-.card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.25;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
-.card-excerpt{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;padding:0 22px;margin-bottom:16px}
-.card-footer{margin-top:auto;padding:14px 22px 18px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.card-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
-.card-loc{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
-.two-col{display:grid;grid-template-columns:2fr 1fr;gap:48px;margin-bottom:56px;align-items:start}
-.sidebar{display:flex;flex-direction:column;gap:16px}
-.sidebar-box{background:#fff;border:1px solid var(--border);padding:22px}
+.two-col{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+.posts-list{display:flex;flex-direction:column;gap:22px;margin-bottom:60px}
+.big-card{background:#fff;border:1px solid var(--border);display:grid;grid-template-columns:180px 1fr;overflow:hidden;transition:box-shadow .25s;text-decoration:none;color:inherit}
+.big-card:hover{box-shadow:0 6px 30px rgba(30,30,110,.09)}
+.bc-img{background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;position:relative;overflow:hidden}
+.bc-img-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 10px),linear-gradient(160deg,#1E1E6E,#0E0E3A)}
+.bc-num{position:relative;z-index:2;font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:rgba(255,255,255,.12);line-height:1}
+.bc-body{padding:22px 26px;display:flex;flex-direction:column;justify-content:space-between}
+.bc-meta{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap;align-items:center}
+.bc-date{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.bc-loc{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
+.bc-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:8px}
+.bc-excerpt{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;margin-bottom:16px}
+.read-more{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);border-bottom:1.5px solid var(--gold);padding-bottom:2px;display:inline-block}
+.read-more::after{content:' →'}
+.sidebar-box{background:#fff;border:1px solid var(--border);padding:22px;margin-bottom:16px}
 .sb-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
 .sb-tag{display:block;font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);padding:8px 0;border-bottom:1px solid #f0ede6;text-decoration:none;transition:color .2s}
 .sb-tag:hover{color:var(--gold)}
 .sb-tag:last-child{border-bottom:none}
-.big-card{background:#fff;border:1px solid var(--border);margin-bottom:24px;display:grid;grid-template-columns:200px 1fr;overflow:hidden;transition:box-shadow .25s}
-.big-card:hover{box-shadow:0 6px 30px rgba(30,30,110,.09)}
-.bc-img{background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;position:relative;overflow:hidden}
-.bc-img-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 10px),linear-gradient(160deg,#1E1E6E 0%,#0E0E3A 100%)}
-.bc-num{position:relative;z-index:2;font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:rgba(255,255,255,.12);line-height:1}
-.bc-body{padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between}
-.bc-meta{display:flex;gap:12px;margin-bottom:10px;align-items:center}
-.bc-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
-.bc-loc{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
-.bc-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
-.bc-excerpt{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;margin-bottom:16px}
-.read-more{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px;display:inline-block;transition:color .2s}
-.read-more:hover{color:var(--gold)}
-.read-more::after{content:' →'}
-.doc-list{display:flex;flex-direction:column;gap:16px;margin-bottom:56px}
-.doc-item{background:#fff;border:1px solid var(--border);padding:22px 26px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;transition:box-shadow .2s}
-.doc-item:hover{box-shadow:0 4px 20px rgba(30,30,110,.08)}
-.doc-icon{font-size:26px}
-.doc-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.doc-desc{font-size:13px;color:var(--muted);font-weight:300;line-height:1.5}
-.doc-tag{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;background:var(--paper);border:1px solid var(--border);color:var(--muted);white-space:nowrap}
-.about-coming{max-width:600px;margin:60px auto;text-align:center;padding:0 5vw}
-.ac-icon{font-size:48px;margin-bottom:24px}
-.ac-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px}
-.ac-title em{font-style:italic;color:var(--navy)}
-.ac-text{font-size:15px;color:var(--body);line-height:1.75;font-weight:300;margin-bottom:28px}
-.ac-quote{border-left:3px solid var(--gold);padding:14px 20px;text-align:left;background:#fff;border-radius:0;font-style:italic;color:var(--muted);font-size:14px;line-height:1.6}
-footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
-.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-logo{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)}
-.footer-logo strong{color:var(--ua-gold)}
-.footer-copy{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.22);text-transform:uppercase}
-@media(max-width:900px){
-  .posts-grid{grid-template-columns:1fr 1fr}
-  .two-col{grid-template-columns:1fr}
-  .sidebar{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .big-card{grid-template-columns:1fr}
-  .bc-img{min-height:100px}
-  .doc-item{grid-template-columns:auto 1fr;gap:14px}
-  .doc-tag{display:none}
-}
-@media(max-width:600px){
-  .posts-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
-}
+@media(max-width:900px){.two-col{grid-template-columns:1fr}.big-card{grid-template-columns:1fr}.bc-img{min-height:80px}}
 </style>
 </head>
 <body>
-
 <div class="ua-stripe"></div>
 <nav>
   <a class="nav-logo" href="index.html">Shelter <strong>Dispatches</strong></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li>
-<li><a href="field-notes.html" class="active">Field Notes</a></li>
-<li><a href="methodology.html">Methodology</a></li>
-<li><a href="policy.html">Policy</a></li>
-<li><a href="about.html">About</a></li>
-</ul>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="field-notes.html" class="active">Field Notes</a></li><li><a href="methodology.html">Methodology</a></li><li><a href="policy.html">Policy</a></li><li><a href="about.html">About</a></li></ul>
 </nav>
 <div class="page-header">
   <div class="ph-inner">
@@ -134,85 +86,87 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
   <div class="two-col">
     <div>
       <div class="section-label">All Dispatches</div>
-      <div class="doc-list">
-        <div class="big-card">
-          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">01</div></div>
+      <div class="posts-list">
+
+        <a class="big-card" href="post-common-spaces.html">
+          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">04</div></div>
           <div class="bc-body">
             <div>
-              <div class="bc-meta"><span class="card-cat cat-field">Field Report</span><span class="bc-date">28 Apr 2026</span><span class="bc-loc">📍 Kharkiv</span></div>
-              <h3 class="bc-title">Hard Repairs at Scale: Why Category 2 Can't Wait Any Longer</h3>
-              <p class="bc-excerpt">Light and medium repair need is visibly declining across the Crescent Zone. What remains is structurally complex Category 2 work — and the backlog is growing faster than the response can absorb it.</p>
+              <div class="bc-meta"><span class="card-cat cat-repair">Common Spaces</span><span class="bc-date">Aug 2026</span><span class="bc-loc">📍 Kharkiv · Mykolaiv</span></div>
+              <div class="bc-title">Common Spaces: The Repair Nobody Budgeted For</div>
+              <p class="bc-excerpt">Local authorities in Kharkiv, Chernihiv and Mykolaiv face massive repair backlogs with no municipal budget. Damaged common spaces are blocking 25% of residents from eVidnovlennia compensation.</p>
             </div>
-            <a class="read-more" href="#">Read dispatch</a>
+            <span class="read-more">Read dispatch</span>
           </div>
-        </div>
-        <div class="big-card">
-          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">02</div></div>
-          <div class="bc-body">
-            <div>
-              <div class="bc-meta"><span class="card-cat cat-energy">Hybrid Energy</span><span class="bc-date">14 Apr 2026</span><span class="bc-loc">📍 Zaporizhzhia</span></div>
-              <h3 class="bc-title">Solar + Generator: The Only Heating Logic That Survives Winter</h3>
-              <p class="bc-excerpt">After two winters of rolling blackouts, centralised heating can no longer be relied upon. This post walks through what a working hybrid energy system looks like at the household level — and what it realistically costs.</p>
-            </div>
-            <a class="read-more" href="#">Read dispatch</a>
-          </div>
-        </div>
-        <div class="big-card">
+        </a>
+
+        <a class="big-card" href="post-build-back.html">
           <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">03</div></div>
           <div class="bc-body">
             <div>
-              <div class="bc-meta"><span class="card-cat cat-cccm">CCCM</span><span class="bc-date">2 Apr 2026</span><span class="bc-loc">📍 Dnipro</span></div>
-              <h3 class="bc-title">Collective Centres Are Not a Temporary Solution Anymore</h3>
-              <p class="bc-excerpt">They were never meant to last four years. For an estimated 300,000 IDPs in Ukraine, a dormitory or repurposed school is now home — and systematic rehabilitation of this stock is the only dignified answer.</p>
+              <div class="bc-meta"><span class="card-cat cat-opinion">Opinion</span><span class="bc-date">Aug 2026</span><span class="bc-loc">📍 Ukraine</span></div>
+              <div class="bc-title">Build Back on Their Own Land: The Case for Typological Housing</div>
+              <p class="bc-excerpt">For total-loss households, the land still belongs to them. Duplexes on owned plots could reach two categories of need — landowners and IDPs without land — in a single intervention.</p>
             </div>
-            <a class="read-more" href="#">Read dispatch</a>
+            <span class="read-more">Read dispatch</span>
           </div>
-        </div>
-        <div class="big-card">
-          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">05</div></div>
+        </a>
+
+        <a class="big-card" href="post-collective-centres.html">
+          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">02</div></div>
           <div class="bc-body">
             <div>
-              <div class="bc-meta"><span class="card-cat cat-field">Field Note</span><span class="bc-date">20 Feb 2026</span><span class="bc-loc">📍 Sumska Oblast</span></div>
-              <h3 class="bc-title">Insulation in Rural Communities: The Gap Nobody Talks About</h3>
-              <p class="bc-excerpt">Urban repair programmes reach city households. But villages in Kharkivska and Sumska with 80% war damage rates often have no humanitarian presence at all. Insulation needs are acute — and unaddressed.</p>
+              <div class="bc-meta"><span class="card-cat cat-cccm">CCCM</span><span class="bc-date">Jul 2026</span><span class="bc-loc">📍 Dnipro · Kharkiv</span></div>
+              <div class="bc-title">Collective Centres Were Never the Answer. What Comes Next?</div>
+              <p class="bc-excerpt">Near the front line, collective centre repair is still urgent. Further away, the transition to temporary housing (Resolution 495) and social housing (Law 12377, Art. 29) must begin now.</p>
             </div>
-            <a class="read-more" href="#">Read dispatch</a>
+            <span class="read-more">Read dispatch</span>
           </div>
-        </div>
+        </a>
+
+        <a class="big-card" href="post-hard-repairs.html">
+          <div class="bc-img"><div class="bc-img-bg"></div><div class="bc-num">01</div></div>
+          <div class="bc-body">
+            <div>
+              <div class="bc-meta"><span class="card-cat cat-field">Field Report</span><span class="bc-date">Apr 2026</span><span class="bc-loc">📍 Mykolaiv</span></div>
+              <div class="bc-title">Hard Repairs at Scale: Why Category 2 Can't Wait Any Longer</div>
+              <p class="bc-excerpt">Cat. 1 cannot address structural damage. Rural families will not leave their land. Apartments with blast damage sit in a policy void. The case for Cat. 2 as a humanitarian priority — and what donors need to understand.</p>
+            </div>
+            <span class="read-more">Read dispatch</span>
+          </div>
+        </a>
+
       </div>
     </div>
-    <div class="sidebar">
+
+    <div>
       <div class="sidebar-box">
         <div class="sb-label">Filter by Oblast</div>
-        <a class="sb-tag" href="#">📍 Kharkivska</a>
-        <a class="sb-tag" href="#">📍 Dnipropetrovska</a>
-        <a class="sb-tag" href="#">📍 Zaporizka</a>
-        <a class="sb-tag" href="#">📍 Khersonska</a>
-        <a class="sb-tag" href="#">📍 Donetska</a>
-        <a class="sb-tag" href="#">📍 Sumska</a>
-        <a class="sb-tag" href="#">📍 Mykolaivska</a>
-        <a class="sb-tag" href="#">📍 Chernihivska</a>
+        <a class="sb-tag" href="field-notes.html">📍 Kharkivska</a>
+        <a class="sb-tag" href="field-notes.html">📍 Dnipropetrovska</a>
+        <a class="sb-tag" href="field-notes.html">📍 Zaporizka</a>
+        <a class="sb-tag" href="field-notes.html">📍 Khersonska</a>
+        <a class="sb-tag" href="field-notes.html">📍 Donetska</a>
+        <a class="sb-tag" href="field-notes.html">📍 Sumska</a>
+        <a class="sb-tag" href="field-notes.html">📍 Mykolaivska</a>
+        <a class="sb-tag" href="field-notes.html">📍 Chernihivska</a>
       </div>
       <div class="sidebar-box">
         <div class="sb-label">Topics</div>
-        <a class="sb-tag" href="#">Cat. 1 Repairs</a>
-        <a class="sb-tag" href="#">Cat. 2 Repairs</a>
-        <a class="sb-tag" href="#">Hybrid Energy</a>
-        <a class="sb-tag" href="#">CCCM</a>
-        <a class="sb-tag" href="#">Insulation</a>
-        <a class="sb-tag" href="#">Modular Housing</a>
-        <a class="sb-tag" href="#">Demolition</a>
-        <a class="sb-tag" href="#">Social Housing</a>
+        <a class="sb-tag" href="field-notes.html">Cat. 2 Hard Repairs</a>
+        <a class="sb-tag" href="field-notes.html">Common Spaces</a>
+        <a class="sb-tag" href="field-notes.html">CCCM · Collective Centres</a>
+        <a class="sb-tag" href="field-notes.html">Temporary Housing</a>
+        <a class="sb-tag" href="field-notes.html">Social Housing</a>
+        <a class="sb-tag" href="field-notes.html">Typological Housing</a>
+        <a class="sb-tag" href="field-notes.html">Rural Communities</a>
+        <a class="sb-tag" href="field-notes.html">eVidnovlennia</a>
       </div>
     </div>
   </div>
 </div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Shelter <strong>Dispatches</strong> · Ukraine</div>
-    <div class="footer-copy">Field journal on humanitarian shelter response · 2024–2026</div>
-  </div>
-</footer>
-</body>
-</html>
+<footer><div class="footer-inner">
+  <div class="footer-logo">Shelter <strong>Dispatches</strong> · Ukraine</div>
+  <div class="footer-copy">Field journal on humanitarian shelter response · 2024–2026</div>
+</div></footer>
+</body></html>

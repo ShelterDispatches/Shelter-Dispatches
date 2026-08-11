@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Methodology — Shelter Dispatches</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:#1E1E6E; --gold:#C8A030; --green:#2E6E4E;
-  --paper:#F4F1EA; --ink:#1A1A2E; --body:#3D3D4E;
-  --muted:#7A7A8C; --border:#DDD8CC; --card:#FFFFFF;
-  --ua-blue:#005BBB; --ua-gold:#FFD500;
-  --red:#8E1A1A;
-}
+:root{--navy:#1E1E6E;--gold:#C8A030;--green:#2E6E4E;--paper:#F4F1EA;--ink:#1A1A2E;--body:#3D3D4E;--muted:#7A7A8C;--border:#DDD8CC;--ua-blue:#005BBB;--ua-gold:#FFD500}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .ua-stripe{height:5px;background:linear-gradient(90deg,var(--ua-blue) 50%,var(--ua-gold) 50%)}
 nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.25)}
-.nav-logo{font-family:'Space Mono',monospace;font-size:13px;color:#fff;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.9}
+.nav-logo{font-family:'Space Mono',monospace;font-size:13px;color:#fff;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
 .nav-logo strong{color:var(--ua-gold)}
 .nav-links{display:flex;gap:0;list-style:none}
 .nav-links a{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:0 16px;height:58px;display:flex;align-items:center;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
@@ -37,169 +29,182 @@ nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify
 .main-wrap{max-width:1200px;margin:0 auto;padding:0 5vw}
 .section-label{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:40px 0 20px;border-bottom:1px solid var(--border);margin-bottom:32px;display:flex;align-items:center;gap:12px}
 .section-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--gold)}
+
+/* Resource cards */
+.resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:48px}
+.resource-card{background:#fff;border:1px solid var(--border);padding:24px;transition:box-shadow .2s,transform .2s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.resource-card:hover{box-shadow:0 6px 28px rgba(30,30,110,.09);transform:translateY(-2px)}
+.rc-type{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:3px 8px;display:inline-block;margin-bottom:12px}
+.rc-type.sop{background:#EEF0F8;color:#1E1E6E}
+.rc-type.tool{background:#EDF8F3;color:#1A5C3A}
+.rc-type.data{background:#FFF7E0;color:#8A5C00}
+.rc-type.policy{background:#F5EEF8;color:#5B2D8E}
+.rc-type.assess{background:#FFF0F0;color:#8E1A1A}
+.rc-type.hub{background:#E8F4FF;color:#0A4A7A}
+.rc-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:8px}
+.rc-desc{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;flex:1}
+.rc-link{margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px}
+.rc-link::after{content:'→'}
+.rc-meta{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.06em;color:var(--muted);margin-top:8px;text-transform:uppercase}
+
+/* Typology table */
 .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px}
-.post-card{background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;cursor:pointer;text-decoration:none;color:inherit}
+.post-card{background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;text-decoration:none;color:inherit}
 .post-card:hover{box-shadow:0 6px 30px rgba(30,30,110,.09);transform:translateY(-2px)}
 .card-top{padding:20px 22px 0}
 .card-cat{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:3px 8px;display:inline-block;margin-bottom:12px}
 .cat-repair{background:#EEF0F8;color:#1E1E6E}
-.cat-energy{background:#FFF7E0;color:#8A5C00}
-.cat-cccm{background:#EDF8F3;color:#1A5C3A}
-.cat-policy{background:#F5EEF8;color:#5B2D8E}
-.cat-field{background:#FFF0F0;color:#8E1A1A}
-.cat-infra{background:#E8F4FF;color:#0A4A7A}
-.cat-sop{background:#F0F8EE;color:#2A5C1A}
 .cat-tech{background:#FFF4E8;color:#7A3C00}
-.cat-law{background:#F0EEF8;color:#3A1A6E}
-.card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.25;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
+.cat-field{background:#FFF0F0;color:#8E1A1A}
+.card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:10px}
 .card-excerpt{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;padding:0 22px;margin-bottom:16px}
 .card-footer{margin-top:auto;padding:14px 22px 18px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
 .card-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
-.card-loc{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
-.two-col{display:grid;grid-template-columns:2fr 1fr;gap:48px;margin-bottom:56px;align-items:start}
-.sidebar{display:flex;flex-direction:column;gap:16px}
-.sidebar-box{background:#fff;border:1px solid var(--border);padding:22px}
-.sb-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-.sb-tag{display:block;font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);padding:8px 0;border-bottom:1px solid #f0ede6;text-decoration:none;transition:color .2s}
-.sb-tag:hover{color:var(--gold)}
-.sb-tag:last-child{border-bottom:none}
-.big-card{background:#fff;border:1px solid var(--border);margin-bottom:24px;display:grid;grid-template-columns:200px 1fr;overflow:hidden;transition:box-shadow .25s}
-.big-card:hover{box-shadow:0 6px 30px rgba(30,30,110,.09)}
-.bc-img{background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;position:relative;overflow:hidden}
-.bc-img-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 10px),linear-gradient(160deg,#1E1E6E 0%,#0E0E3A 100%)}
-.bc-num{position:relative;z-index:2;font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:rgba(255,255,255,.12);line-height:1}
-.bc-body{padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between}
-.bc-meta{display:flex;gap:12px;margin-bottom:10px;align-items:center}
-.bc-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
-.bc-loc{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
-.bc-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
-.bc-excerpt{font-size:13.5px;color:var(--body);line-height:1.65;font-weight:300;margin-bottom:16px}
-.read-more{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px;display:inline-block;transition:color .2s}
-.read-more:hover{color:var(--gold)}
-.read-more::after{content:' →'}
-.doc-list{display:flex;flex-direction:column;gap:16px;margin-bottom:56px}
-.doc-item{background:#fff;border:1px solid var(--border);padding:22px 26px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;transition:box-shadow .2s}
-.doc-item:hover{box-shadow:0 4px 20px rgba(30,30,110,.08)}
-.doc-icon{font-size:26px}
-.doc-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.doc-desc{font-size:13px;color:var(--muted);font-weight:300;line-height:1.5}
-.doc-tag{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;background:var(--paper);border:1px solid var(--border);color:var(--muted);white-space:nowrap}
-.about-coming{max-width:600px;margin:60px auto;text-align:center;padding:0 5vw}
-.ac-icon{font-size:48px;margin-bottom:24px}
-.ac-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px}
-.ac-title em{font-style:italic;color:var(--navy)}
-.ac-text{font-size:15px;color:var(--body);line-height:1.75;font-weight:300;margin-bottom:28px}
-.ac-quote{border-left:3px solid var(--gold);padding:14px 20px;text-align:left;background:#fff;border-radius:0;font-style:italic;color:var(--muted);font-size:14px;line-height:1.6}
+.card-loc{font-family:'Space Mono',monospace;font-size:8.5px;color:var(--green);text-transform:uppercase}
+
 footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .footer-logo strong{color:var(--ua-gold)}
 .footer-copy{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.22);text-transform:uppercase}
-@media(max-width:900px){
-  .posts-grid{grid-template-columns:1fr 1fr}
-  .two-col{grid-template-columns:1fr}
-  .sidebar{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .big-card{grid-template-columns:1fr}
-  .bc-img{min-height:100px}
-  .doc-item{grid-template-columns:auto 1fr;gap:14px}
-  .doc-tag{display:none}
-}
-@media(max-width:600px){
-  .posts-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
-}
+@media(max-width:900px){.resource-grid{grid-template-columns:1fr}.posts-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.posts-grid{grid-template-columns:1fr}.nav-links{display:none}}
 </style>
 </head>
 <body>
-
 <div class="ua-stripe"></div>
 <nav>
   <a class="nav-logo" href="index.html">Shelter <strong>Dispatches</strong></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li>
-<li><a href="field-notes.html">Field Notes</a></li>
-<li><a href="methodology.html" class="active">Methodology</a></li>
-<li><a href="policy.html">Policy</a></li>
-<li><a href="about.html">About</a></li>
-</ul>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="field-notes.html">Field Notes</a></li>
+    <li><a href="methodology.html" class="active">Methodology</a></li>
+    <li><a href="policy.html">Policy</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
 </nav>
 <div class="page-header">
   <div class="ph-inner">
     <div class="ph-eyebrow">Technical · Standards · Practice</div>
     <h1 class="ph-title">Method<em>ology</em></h1>
-    <p class="ph-desc">Technical materials, repair typologies, SOP breakdowns, and operational frameworks for shelter practitioners working in Ukraine.</p>
+    <p class="ph-desc">Key documents, SOPs, tools and reference materials for shelter practitioners working in Ukraine. All links open official Shelter Cluster or partner resources.</p>
   </div>
 </div>
 <div class="gold-rule"></div>
 <div class="main-wrap">
-  <div class="section-label">Technical Guides</div>
-  <div class="doc-list">
-    <div class="doc-item">
-      <div class="doc-icon">🏗️</div>
-      <div>
-        <div class="doc-title">Category 1 vs Category 2 Repairs — A Field Practitioner's Guide</div>
-        <div class="doc-desc">What the Shelter Cluster SOP (Feb 2026) actually says about Light and Medium repairs, cost benchmarks, and when a household crosses the threshold into Category 2 structural territory.</div>
-      </div>
-      <span class="doc-tag">SOP · 2026</span>
+
+  <!-- CLUSTER DOCUMENTS -->
+  <div class="section-label">Shelter Cluster — Core Documents</div>
+  <div class="resource-grid">
+
+    <div class="resource-card">
+      <span class="rc-type sop">SOP · Cat. 1</span>
+      <div class="rc-title">SOP for Category I Repairs — Final Version</div>
+      <div class="rc-desc">The primary technical standard for Light and Medium humanitarian household repairs in Ukraine. Covers damage classification, repair scope, cost benchmarks, targeting criteria, modalities, SIDAR registration, and quality standards. April 2026 final version. 147 pages.</div>
+      <div class="rc-meta">Shelter Cluster Ukraine · April 2026 · v1.0 Final</div>
+      <a class="rc-link" href="https://www.sheltercluster.org/ukraine/pages/technical-guidelines" target="_blank" rel="noopener">View on Shelter Cluster</a>
     </div>
-    <div class="doc-item">
-      <div class="doc-icon">⚡</div>
-      <div>
-        <div class="doc-title">Hybrid Energy Systems for Households — Design, Sizing, and Cost</div>
-        <div class="doc-desc">Solar PV + battery + generator integration for residential and social buildings. What autonomy looks like in practice, what it costs, and how to specify it in a Bill of Quantities.</div>
-      </div>
-      <span class="doc-tag">Technical</span>
+
+    <div class="resource-card">
+      <span class="rc-type sop">SOP · Common Spaces</span>
+      <div class="rc-title">SOP for Humanitarian Repairs of Common Spaces in Multi-Apartment Buildings</div>
+      <div class="rc-desc">Operational procedures for the repair of common areas (roofs, stairwells, facades, MEP systems) in multi-apartment buildings. Includes HLP guidance, damage classification, scope of works, reference costs, ACAB/HMO engagement, asbestos management, and accessibility standards.</div>
+      <div class="rc-meta">Shelter Cluster Ukraine · January 2025 · v1.0</div>
+      <a class="rc-link" href="https://www.sheltercluster.org/ukraine/documents/sop-humanitarian-repairs-common-spaces-multi-apartment-buildings" target="_blank" rel="noopener">Download SOP</a>
     </div>
-    <div class="doc-item">
-      <div class="doc-icon">🧱</div>
-      <div>
-        <div class="doc-title">Thermal Envelope Closure — Standards and Common Failures</div>
-        <div class="doc-desc">Window specification (minimum single-chamber double-glazed, heat transfer resistance ≥1:4), roof insulation, door replacement — and the most common quality failures seen in the field.</div>
-      </div>
-      <span class="doc-tag">DBN Standards</span>
+
+    <div class="resource-card">
+      <span class="rc-type data">Activity Matrix</span>
+      <div class="rc-title">Shelter Cluster Activity Matrix 2026 — v1.1</div>
+      <div class="rc-desc">Complete activity reference matrix for all Shelter Cluster interventions in Ukraine. Covers SN101–SN303: Emergency Shelter, NFI, Winter, Repairs (Category I, II, Common Spaces, IDP Housing), Collective Sites, and Rental Support. Includes reference costs, indicators, and strategic priority alignment. Updated July 2026.</div>
+      <div class="rc-meta">Shelter Cluster Ukraine · 24 July 2026 · v1.1</div>
+      <a class="rc-link" href="https://www.sheltercluster.org/response/ukraine" target="_blank" rel="noopener">Download from Cluster</a>
     </div>
-    <div class="doc-item">
-      <div class="doc-icon">♻️</div>
-      <div>
-        <div class="doc-title">From Rubble to Roads: Construction Waste Recycling — S3 Conference Summary</div>
-        <div class="doc-desc">Key findings from the S3 Conference in Lviv (March 2026): CDW-to-road-aggregate, slag cement binders, Everox Technology model, and what ACTED can pilot now vs. what needs legal framework first.</div>
-      </div>
-      <span class="doc-tag">Innovation</span>
+
+    <div class="resource-card">
+      <span class="rc-type data">Activities Handbook</span>
+      <div class="rc-title">Shelter Cluster Activities Handbook 2026</div>
+      <div class="rc-desc">Comprehensive operational guidance for all Shelter Cluster activities — targeting, vulnerability criteria, modality selection, reporting requirements, and activity-specific preconditions. Essential reference for programme design and donor proposals. June 2026 version.</div>
+      <div class="rc-meta">Shelter Cluster Ukraine · June 2026</div>
+      <a class="rc-link" href="https://s3.eu-west-1.amazonaws.com/sheltercluster.org/public/docs/Shelter%20Cluster%20Ukraine%202026%20Activities%20Handbook_0.pdf" target="_blank" rel="noopener">Download PDF</a>
     </div>
-    <div class="doc-item">
-      <div class="doc-icon">🏠</div>
-      <div>
-        <div class="doc-title">Modular Housing — Large-Panel Prefab Systems for Replacement Dwellings</div>
-        <div class="doc-desc">When a building is irreparably damaged, LPS prefab is the fastest and most viable replacement method. What the system looks like, what it costs, and how it integrates with demolition and CDW recycling.</div>
-      </div>
-      <span class="doc-tag">Technical</span>
+
+    <div class="resource-card">
+      <span class="rc-type assess">Assessment · REACH</span>
+      <div class="rc-title">Shelter Response Support Assessment (SRSA)</div>
+      <div class="rc-desc">Hromada-level assessment of shelter damage, repair needs, preferred aid modalities, and barriers to access — including barriers to eVidnovlennia. Covers 329 hromadas across 12 oblasts in the Crescent Zone. Foundational data for programme targeting and priority setting.</div>
+      <div class="rc-meta">REACH Ukraine · August 2024</div>
+      <a class="rc-link" href="https://sheltercluster.org/ukraine/documents/shelter-response-support-assessment" target="_blank" rel="noopener">Access Assessment</a>
     </div>
-    <div class="doc-item">
-      <div class="doc-icon">📋</div>
-      <div>
-        <div class="doc-title">SIDAR — Deduplication in Practice</div>
-        <div class="doc-desc">How SIDAR works, what it catches, what it misses, and how to ensure your registration data doesn't create problems at the allocation stage. Common field mistakes and how to avoid them.</div>
-      </div>
-      <span class="doc-tag">Coordination</span>
+
+    <div class="resource-card">
+      <span class="rc-type tool">Coordination Tool</span>
+      <div class="rc-title">Shelter Repairs Coordination Tool</div>
+      <div class="rc-desc">The Shelter Cluster's operational coordination tool for repair programmes — tracking partner coverage, identifying gaps, and supporting deduplication with eVidnovlennia and SIDAR. Essential for area-based coordination and 5W reporting.</div>
+      <div class="rc-meta">Shelter Cluster Ukraine · 2026</div>
+      <a class="rc-link" href="https://www.sheltercluster.org/ukraine/pages/shelter-repairs-coordination-tool" target="_blank" rel="noopener">Open Tool</a>
     </div>
+
   </div>
+
+  <!-- PLATFORMS & TOOLS -->
+  <div class="section-label">Platforms &amp; Databases</div>
+  <div class="resource-grid">
+
+    <div class="resource-card">
+      <span class="rc-type tool">SIDAR</span>
+      <div class="rc-title">SIDAR — Shelter Information Damage Assessment &amp; Response Database</div>
+      <div class="rc-desc">The Shelter Cluster and UNHCR deduplication platform for humanitarian shelter assistance. All household-level repair interventions must be registered in SIDAR before assistance decision. Prevents duplication with eVidnovlennia, VidnoviDIM, and other humanitarian programmes. Linked to the Government Register of Damaged and Destroyed Property (RDDP).</div>
+      <div class="rc-meta">Shelter Cluster · UNHCR Ukraine · Active</div>
+      <a class="rc-link" href="https://www.sheltercluster.org/ukraine/pages/shelter-repairs-coordination-tool" target="_blank" rel="noopener">SIDAR via Cluster</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="rc-type data">State Programme</span>
+      <div class="rc-title">eVidnovlennia — State Housing Compensation Programme</div>
+      <div class="rc-desc">Ukraine's state compensation platform for war-damaged housing. Governed by Resolution No. 381 (April 2023). Humanitarian repairs complement but do not replace eVidnovlennia — NGOs target households with unmet needs, insufficient compensation, or where damaged common spaces block access to the state programme.</div>
+      <div class="rc-meta">Government of Ukraine · Active</div>
+      <a class="rc-link" href="https://vidnovlennia.gov.ua" target="_blank" rel="noopener">vidnovlennia.gov.ua</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="rc-type hub">Cluster Hub · East</span>
+      <div class="rc-title">Shelter Cluster East Hub — Kharkiv</div>
+      <div class="rc-desc">Sub-national coordination hub for Kharkivska, Donetska, Sumska, and Poltavska oblasts. Hosts regular coordination meetings, emergency response dashboards, SIDAR updates, and monitoring missions. Primary contact point for field-level Shelter Cluster coordination in the east.</div>
+      <div class="rc-meta">Shelter Cluster East Hub · Kharkiv</div>
+      <a class="rc-link" href="https://www.sheltercluster.org/response/ukraine/east-hub" target="_blank" rel="noopener">East Hub Page</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="rc-type hub">Cluster · Ukraine</span>
+      <div class="rc-title">Ukraine Shelter Cluster — National Page</div>
+      <div class="rc-desc">Central repository for all Shelter Cluster Ukraine documents, dashboards, assessments, meeting minutes, and technical guidelines. Starting point for any practitioner joining or working with the Ukraine shelter response.</div>
+      <div class="rc-meta">Shelter Cluster · sheltercluster.org</div>
+      <a class="rc-link" href="https://www.sheltercluster.org/response/ukraine" target="_blank" rel="noopener">sheltercluster.org/ukraine</a>
+    </div>
+
+  </div>
+
+  <!-- REPAIR TYPOLOGY -->
   <div class="section-label">Repair Typology Reference</div>
   <div class="posts-grid">
     <div class="post-card">
-      <div class="card-top"><span class="card-cat cat-repair">Light Repair</span><h3 class="card-title">Thermal Envelope Only: Windows, Doors, Roof</h3></div>
-      <p class="card-excerpt">The core Light Repair scope: energy-saving windows, entrance doors, roofing panels, drainage and slopes. No structural works. Average cost: $2,116–$3,702 (private house).</p>
-      <div class="card-footer"><span class="card-date">SOP Table 3.1</span><span class="card-loc">Cat. 1</span></div>
+      <div class="card-top"><span class="card-cat cat-repair">Light Repair · SN301A</span><div class="card-title">Thermal Envelope Only</div></div>
+      <p class="card-excerpt">Core scope: energy-saving windows, entrance doors, roofing panels, drainage and slopes. No structural works. Linked directly to thermal envelope closure and minimum habitability.<br><br>Cost: $2,120/HH (house 1–3 BNF) · $1,360/HH (apartment)</p>
+      <div class="card-footer"><span class="card-date">SOP Table 3.1 · 3.3</span><span class="card-loc">Cat. 1</span></div>
     </div>
     <div class="post-card">
-      <div class="card-top"><span class="card-cat cat-tech">Medium Repair</span><h3 class="card-title">Full Envelope + Minimum Habitability</h3></div>
-      <p class="card-excerpt">All Light Repair elements plus partial/full roof structure, partition repairs, minor plumbing/electrical, sanitary fixtures. Average cost: $4,924–$8,611 (private house).</p>
-      <div class="card-footer"><span class="card-date">SOP Table 3.2</span><span class="card-loc">Cat. 1</span></div>
+      <div class="card-top"><span class="card-cat cat-tech">Medium Repair · SN301B</span><div class="card-title">Full Envelope + Minimum Habitability</div></div>
+      <p class="card-excerpt">All Light Repair elements plus partial/full roof structure, partition repairs, minor plumbing/electrical where safety risk exists, sanitary fixtures, accessibility adaptations (up to 10% top-up).<br><br>Cost: $4,925/HH (house 1–3 BNF) · $2,325/HH (apartment)</p>
+      <div class="card-footer"><span class="card-date">SOP Table 3.2 · 3.4</span><span class="card-loc">Cat. 1</span></div>
     </div>
     <div class="post-card">
-      <div class="card-top"><span class="card-cat cat-field">Hard Repair</span><h3 class="card-title">Structural Intervention — Category 2</h3></div>
-      <p class="card-excerpt">Load-bearing wall, foundation, or floor plate damage. Requires engineering assessment, project design, and Framework Agreement with contractor. Budget: highly variable, typically $15,000–$80,000+.</p>
-      <div class="card-footer"><span class="card-date">Cat. 2</span><span class="card-loc">High Priority</span></div>
+      <div class="card-top"><span class="card-cat cat-field">Heavy Repair · SN301C</span><div class="card-title">Structural Intervention — Category II</div></div>
+      <p class="card-excerpt">Load-bearing wall, foundation, or floor plate damage. Requires engineering assessment, project design document, and Framework Agreement with qualified contractor. Private houses only — structural damage to apartments is beyond humanitarian scope.<br><br>Reference cost: $12,000/HH</p>
+      <div class="card-footer"><span class="card-date">Activity Matrix 2026</span><span class="card-loc">Cat. 2</span></div>
     </div>
   </div>
+
 </div>
 
 <footer>
