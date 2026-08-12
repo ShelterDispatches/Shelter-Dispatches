@@ -71,6 +71,18 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
 .footer-logo strong{color:var(--ua-gold)}
 .footer-copy{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.22);text-transform:uppercase}
 @media(max-width:700px){.models-grid{grid-template-columns:1fr}.nav-links{display:none}}
+
+/* ── SHARE BUTTONS ── */
+.share-section{margin:48px 0 0;padding-top:24px;border-top:1px solid var(--border)}
+.share-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.share-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:9px 16px;border:none;cursor:pointer;text-decoration:none;transition:opacity .2s,transform .15s}
+.share-btn:hover{opacity:.85;transform:translateY(-1px)}
+.share-btn svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+.share-btn.linkedin{background:#0A66C2;color:#fff}
+.share-btn.twitter{background:#000;color:#fff}
+.share-btn.facebook{background:#1877F2;color:#fff}
+.share-btn.whatsapp{background:#25D366;color:#fff}
 </style>
 </head>
 <body>
@@ -244,5 +256,19 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
     <div class="footer-copy">Field journal on humanitarian shelter response · 2024–2026</div>
   </div>
 </footer>
+
+<script>
+function shareOn(platform){
+  var url=encodeURIComponent(window.location.href);
+  var title=encodeURIComponent(document.title);
+  var links={
+    linkedin:'https://www.linkedin.com/sharing/share-offsite/?url='+url,
+    twitter:'https://twitter.com/intent/tweet?url='+url+'&text='+title+'&via=ShelterDispatches',
+    facebook:'https://www.facebook.com/sharer/sharer.php?u='+url,
+    whatsapp:'https://wa.me/?text='+title+'%20'+url
+  };
+  window.open(links[platform],'_blank','width=600,height=500,noopener');
+}
+</script>
 </body>
 </html>
