@@ -258,8 +258,19 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
 </footer>
 
 
+
 <script>
-function sh(p){{var u=encodeURIComponent(window.location.href),t=encodeURIComponent(document.title),m={{li:'https://www.linkedin.com/sharing/share-offsite/?url='+u,x:'https://twitter.com/intent/tweet?url='+u+'&text='+t,fb:'https://www.facebook.com/sharer/sharer.php?u='+u,wa:'https://wa.me/?text='+t+'%20'+u}};window.open(m[p],'_blank','width=620,height=520,noopener');}}
+function sh(p){
+  var u=encodeURIComponent(window.location.href);
+  var t=encodeURIComponent(document.title);
+  var m={
+    li:'https://www.linkedin.com/sharing/share-offsite/?url='+u,
+    x:'https://twitter.com/intent/tweet?url='+u+'&text='+t,
+    fb:'https://www.facebook.com/sharer/sharer.php?u='+u,
+    wa:'https://wa.me/?text='+t+'%20'+u
+  };
+  window.open(m[p],'_blank','width=620,height=520,noopener');
+}
 </script>
 </body>
 </html>
