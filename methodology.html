@@ -86,13 +86,48 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
 .footer-copy{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.22);text-transform:uppercase}
 @media(max-width:900px){.resource-grid{grid-template-columns:1fr}.posts-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.posts-grid{grid-template-columns:1fr}.nav-links{display:none}}
+
+/* ── Mobile Nav ── */
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:transparent;border:1.5px solid rgba(255,255,255,.25);cursor:pointer;padding:6px;border-radius:2px;flex-shrink:0}
+.burger span{display:block;width:100%;height:2px;background:#fff;border-radius:2px;transition:all .25s ease}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:700px){
+  .burger{display:flex}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:58px;left:0;right:0;
+    background:var(--navy);
+    flex-direction:column;
+    padding:8px 0 16px;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+    z-index:200;
+    border-top:1px solid rgba(255,255,255,.1)
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{
+    height:auto;
+    padding:13px 5vw;
+    border-bottom:none;
+    border-left:3px solid transparent;
+    font-size:11px;
+    letter-spacing:.12em
+  }
+  .nav-links a.active{border-left-color:var(--ua-gold);background:rgba(255,255,255,.05)}
+  .nav-links a:hover{background:rgba(255,255,255,.08);border-left-color:rgba(255,255,255,.2)}
+}
 </style>
 </head>
 <body>
 <div class="ua-stripe"></div>
 <nav>
   <a class="nav-logo" href="index.html">Shelter <strong>Dispatches</strong></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="field-notes.html">Field Notes</a></li><li><a href="methodology.html" class="active">Methodology</a></li><li><a href="policy.html">Policy</a></li><li><a href="news.html">News</a></li><li><a href="about.html">About</a></li></ul>
+  <button class="burger" id="burger" aria-label="Menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="field-notes.html">Field Notes</a></li><li><a href="methodology.html" class="active">Methodology</a></li><li><a href="policy.html">Policy</a></li><li><a href="news.html">News</a></li><li><a href="about.html">About</a></li></ul>
 </nav>
 <div class="page-header">
   <div class="ph-inner">
