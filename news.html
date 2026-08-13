@@ -412,5 +412,23 @@ function sh(p){
   window.open(links[p],'_blank','width=620,height=520,noopener');
 }
 </script>
+<script>
+function toggleNav(){
+  var b=document.getElementById('burger');
+  var n=document.getElementById('nav-links');
+  if(!b||!n) return;
+  b.classList.toggle('open');
+  n.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('burger');
+  var n=document.getElementById('nav-links');
+  if(!b||!n) return;
+  if(!b.contains(e.target)&&!n.contains(e.target)){
+    b.classList.remove('open');
+    n.classList.remove('open');
+  }
+});
+</script>
 </body>
 </html>

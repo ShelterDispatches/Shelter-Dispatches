@@ -224,4 +224,22 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
   <div class="footer-logo">Shelter <strong>Dispatches</strong> · Ukraine</div>
   <div class="footer-copy">Field journal on humanitarian shelter response · 2024–2026</div>
 </div></footer>
+<script>
+function toggleNav(){
+  var b=document.getElementById('burger');
+  var n=document.getElementById('nav-links');
+  if(!b||!n) return;
+  b.classList.toggle('open');
+  n.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  var b=document.getElementById('burger');
+  var n=document.getElementById('nav-links');
+  if(!b||!n) return;
+  if(!b.contains(e.target)&&!n.contains(e.target)){
+    b.classList.remove('open');
+    n.classList.remove('open');
+  }
+});
+</script>
 </body></html>
