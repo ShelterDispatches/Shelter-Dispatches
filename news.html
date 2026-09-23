@@ -49,6 +49,18 @@ nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify
 .section-label{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:40px 0 20px;border-bottom:1px solid var(--border);margin-bottom:32px;display:flex;align-items:center;gap:12px}
 .section-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--gold)}
 
+/* EDITION DATE BANNER */
+.edition-banner{background:#fff;border:1px solid var(--border);border-left:4px solid var(--ua-gold);padding:14px 22px;margin:40px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.eb-date{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);font-weight:700}
+.eb-new{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;background:var(--ua-gold);color:var(--navy);padding:3px 9px;font-weight:700}
+.eb-count{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* ARCHIVE DIVIDER */
+.archive-divider{background:#EFECE4;border:1px solid var(--border);border-left:4px solid var(--muted);padding:14px 22px;margin:56px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ad-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.ad-icon{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;background:var(--muted);color:#fff;padding:3px 9px}
+.ad-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
 /* TOP STORY */
 .top-story{background:#fff;border:1px solid var(--border);border-top:4px solid var(--navy);padding:28px 32px;margin-bottom:32px;position:relative;transition:box-shadow .2s}
 .top-story:hover{box-shadow:0 6px 28px rgba(30,30,110,.09)}
@@ -63,6 +75,8 @@ nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify
 .tag-cccm{background:#EDF8F3;color:#1A5C3A}
 .tag-recovery{background:#FFF4E8;color:#7A3C00}
 .tag-ebrd{background:#E8F4FF;color:#0A4A7A}
+.tag-winter{background:#E8F0FF;color:#1E3A8A}
+.tag-mykolaiv{background:#FFF0E8;color:#7A3000}
 .news-date{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
 .news-source{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--green);text-transform:uppercase}
 .ts-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:12px}
@@ -73,6 +87,7 @@ nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify
 
 /* NEWS GRID */
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:56px}
+.news-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:40px}
 .news-card{background:#fff;border:1px solid var(--border);padding:22px;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
 .news-card:hover{box-shadow:0 5px 24px rgba(30,30,110,.08);transform:translateY(-2px)}
 .nc-meta{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
@@ -92,13 +107,18 @@ nav{background:var(--navy);padding:0 5vw;display:flex;align-items:center;justify
 .bi-link:hover{color:var(--gold)}
 .bi-link::after{content:' →'}
 
+/* ARCHIVE CONTENT — slightly muted */
+.archive-content .top-story{border-top-color:var(--muted);opacity:.92}
+.archive-content .news-card{opacity:.92}
+.archive-content .brief-item{background:#FAFAF8}
+
 footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .footer-logo strong{color:var(--ua-gold)}
 .footer-copy{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.22);text-transform:uppercase}
-@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.news-grid{grid-template-columns:1fr}.brief-item{grid-template-columns:1fr;gap:8px}.nav-links{display:none}}
+@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}.news-grid-2{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.news-grid{grid-template-columns:1fr}.news-grid-2{grid-template-columns:1fr}.brief-item{grid-template-columns:1fr;gap:8px}.nav-links{display:none}}
 
 /* SHARE */
 .news-share{background:#fff;border:1px solid var(--border);border-top:3px solid var(--navy);padding:22px 28px;margin-bottom:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
@@ -111,52 +131,6 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
 .share-btn.twitter{background:#000;color:#fff}
 .share-btn.facebook{background:#1877F2;color:#fff}
 .share-btn.whatsapp{background:#25D366;color:#fff}
-
-
-
-
-
-
-
-
-
-/* === SHARE === */
-
-.share-label{font-family:'Space Mono',monospace;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.sh-row{display:flex;gap:8px;flex-wrap:wrap}
-
-
-
-
-
-
-/* mini share for news cards */
-.ms-row{display:flex;align-items:center;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
-
-
-
-
-
-
-/* === MOBILE === */
-@media(max-width:700px){
-  .post-hero{padding:36px 5vw 32px}
-  .post-title{font-size:28px}
-  .post-body{padding:32px 5vw 60px}
-  .post-body p{font-size:16px}
-  .post-body h2{font-size:22px}
-  .pullquote{font-size:18px;padding:16px 20px}
-  .callout{padding:16px 18px}
-  .stat-row{grid-template-columns:1fr 1fr!important}
-  .photo-block{margin:36px -5vw}
-  .two-photos{grid-template-columns:1fr!important}
-  .two-photos img{height:220px!important}
-  
-  .models-grid{grid-template-columns:1fr!important}
-  .cont-steps{grid-template-columns:1fr 1fr!important}
-  .meta-row{gap:10px}
-  .mi{font-size:8px}
-}
 
 /* ── Share Buttons ── */
 .share-block{margin:44px 0 0;padding:28px 0 0;border-top:1px solid var(--border)}
@@ -207,6 +181,7 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
   }
   .nav-links a.active{border-left-color:var(--ua-gold);background:rgba(255,255,255,.05)}
   .nav-links a:hover{background:rgba(255,255,255,.08);border-left-color:rgba(255,255,255,.2)}
+  .edition-banner,.archive-divider{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
@@ -224,28 +199,39 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
     <div class="ph-left">
       <div class="ph-eyebrow">Ukraine · Shelter · Housing · Energy</div>
       <h1 class="ph-title">News <em>Brief</em></h1>
-      <p class="ph-desc">A curated daily digest of news, policy developments, donor calls, and sector updates relevant to shelter and housing in Ukraine.</p>
+      <p class="ph-desc">A curated digest of news, policy developments, donor calls, and sector updates relevant to shelter and housing in Ukraine. Previous editions archived below.</p>
     </div>
-    <div class="ph-date">August 17, 2026</div>
+    <div class="ph-date">September 23, 2026</div>
   </div>
 </div>
 <div class="gold-rule"></div>
 <div class="main-wrap">
 
-  <div class="section-label">Top Stories</div>
+  <!-- ═══════════════════════════════════════════════
+       EDITION: SEPTEMBER 23, 2026
+  ════════════════════════════════════════════════ -->
+  <div class="edition-banner">
+    <div>
+      <div class="eb-date">September 23, 2026</div>
+      <div class="eb-count">3 items · Shelter &amp; Housing Digest</div>
+    </div>
+    <span class="eb-new">Latest</span>
+  </div>
 
-  <!-- TOP STORY 1 -->
+  <div class="section-label">Top Story</div>
+
+  <!-- TOP STORY: WINTER PLAN -->
   <div class="top-story">
     <span class="ts-star">⭐ Top Story</span>
     <div class="ts-meta">
-      <span class="news-tag tag-cccm">Shelter Shortage</span>
-      <span class="news-tag tag-housing">Kyiv</span>
-      <span class="news-date">8 Aug 2026</span>
-      <span class="news-source">rferl.org</span>
+      <span class="news-tag tag-winter">Winter Preparedness</span>
+      <span class="news-tag tag-donor">UN Ukraine</span>
+      <span class="news-date">22 Jul 2026</span>
+      <span class="news-source">ukraine.un.org</span>
     </div>
-    <div class="ts-title">Kyiv's Bomb Shelter Shortfall Deepens as Displaced Residents Sleep in Metro Stations</div>
-    <p class="ts-body">Kyiv counts 4,358 shelter facilities for a city of roughly 3 million — but only about 500 are proper bomb shelters. Desnyanskyi district, the city's most populous with around 360,000 residents, has the biggest shortfall, with basements routinely overflowing during air raids. During one recent night of Russian strikes, some 56,000 people crowded into subway stations with tents, mats, and sleeping bags, even though the metro's 46 stations can technically hold only about 40,000. District officials say prefabricated, above-ground concrete shelters near transit stops are the fastest available fix.</p>
-    <a class="news-link" href="https://www.rferl.org/a/shelter-shortage-kyiv-ukraine-russian-missile-attacks/33824765.html" target="_blank" rel="noopener">Read full report</a>
+    <div class="ts-title">UN Ukraine: $358.4 Million Needed to Protect 2.1 Million People Through Winter 2026–27</div>
+    <p class="ts-body">The UN Ukraine Winter Preparedness and Response Plan 2026–2027 calls for $358.4 million to support 2.1 million of the most vulnerable people across the period October 2026 – March 2027. The plan spans 13 humanitarian clusters and prioritises shelter, energy resilience, protection, and access to essential services. Shelter is among the top funding priorities as temperatures drop and energy infrastructure continues to face sustained attacks. The humanitarian community warns that without adequate winter response funding, families in damaged and destroyed homes — particularly in front-line regions — face severe risk. The plan was published on 22 July 2026.</p>
+    <a class="news-link" href="https://ukraine.un.org" target="_blank" rel="noopener">Read full Winter Plan</a>
     <div class="mini-share">
       <span class="ms-label">Share</span>
       <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
@@ -254,139 +240,218 @@ footer{background:var(--ink);padding:36px 5vw 28px;margin-top:60px}
     </div>
   </div>
 
-  <!-- TOP STORY 2 -->
-  <div class="top-story">
-    <span class="ts-star">⭐ Top Story</span>
-    <div class="ts-meta">
-      <span class="news-tag tag-recovery">Mobile Shelters</span>
-      <span class="news-tag tag-donor">Frontline Communities</span>
-      <span class="news-date">8 Aug 2026</span>
-      <span class="news-source">intent.press</span>
-    </div>
-    <div class="ts-title">Ukraine to Install 840 Mobile Shelters Near Schools and Bus Stops in Frontline Communities</div>
-    <p class="ts-body">Ukraine's Ministry of Community and Territorial Development has announced plans to install 840 mobile shelters near bus stops, roads, and schools in frontline communities, including Kherson and Mykolaiv regions — at a projected cost of roughly 1.4 billion hryvnias and expected to benefit some 56,000 children on their daily routines. Regions farther from the front line will help co-finance shelters closer to the fighting. Minister Vitaliy Bezgin said a "well-planned safe space next to the bus stop, road, and school" should become the new standard for frontline community safety, following requests from parents in Mykolaiv for shelter near a children's arts academy.</p>
-    <a class="news-link" href="https://intent.press/en/news/society/2026/plans-are-in-place-to-set-up-840-shelters-in-the-kherson-region-and-other-frontline-regions/" target="_blank" rel="noopener">Read announcement</a>
-    <div class="mini-share">
-      <span class="ms-label">Share</span>
-      <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
-      <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
-      <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
-    </div>
-  </div>
+  <div class="section-label">Energy &amp; Housing Updates</div>
 
-  <div class="section-label">Policy &amp; Law Updates</div>
-  <div class="news-grid">
+  <div class="news-grid-2">
 
+    <!-- ITEM 3: Energy funding postponed -->
     <div class="news-card">
       <div class="nc-meta">
-        <span class="news-tag tag-law">eVidnovlennia</span>
-        <span class="news-date">Aug 2026</span>
+        <span class="news-tag tag-energy">Energy Resilience</span>
+        <span class="news-tag tag-mykolaiv">Mykolaiv Region</span>
+        <span class="news-date">17 Sep 2026</span>
       </div>
-      <div class="nc-title">New Report Maps State and Humanitarian Support Across Ukraine's Housing Repair Pathway</div>
-      <p class="nc-body">A newly published overview traces how displaced and war-affected households move through Ukraine's housing repair and compensation system — combining state compensation via eVidnovlennia with humanitarian shelter-repair support and the referral pathways between the two. Intended as a coordination reference for actors delivering repair assistance, to reduce duplication and close gaps.</p>
-      <div class="nc-footer"><span class="news-source">reliefweb.int</span> &nbsp;<a class="news-link" href="https://reliefweb.int/report/ukraine/housing-compensation-ukraine-state-and-humanitarian-support-across-repair-pathway-august-2026-enuk" target="_blank" rel="noopener">Read more</a>
-    <div class="mini-share">
-      <span class="ms-label">Share</span>
-      <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
-      <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
-      <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
-    </div>
-  </div>
-    
+      <div class="nc-title">Energy Protection Funding for Mykolaiv Region Postponed Until December 2026</div>
+      <p class="nc-body">Funding earmarked for energy infrastructure protection works in the Mykolaiv region has been delayed until December 2026 at the earliest. The announcement raises concerns about preparedness heading into the heating season, as critical facilities — including residential buildings and district heating networks — remain exposed. Local authorities are seeking alternative interim solutions as autumn temperatures begin to fall in southern Ukraine.</p>
+      <div class="nc-footer">
+        <span class="news-source">korabelov.info</span> &nbsp;<a class="news-link" href="https://korabelov.info" target="_blank" rel="noopener">Read more</a>
+        <div class="mini-share">
+          <span class="ms-label">Share</span>
+          <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+          <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+          <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+        </div>
+      </div>
     </div>
 
+    <!-- ITEM 4: Ukraine Investment Framework / social housing -->
     <div class="news-card">
       <div class="nc-meta">
-        <span class="news-tag tag-policy">Compensation</span>
-        <span class="news-date">2026</span>
+        <span class="news-tag tag-housing">Social Housing</span>
+        <span class="news-tag tag-donor">UIF · EU · G7</span>
+        <span class="news-date">Sep 2026</span>
       </div>
-      <div class="nc-title">eVidnovlennia Compensation Caps: Up to UAH 500,000 for Major Repairs to Private Homes</div>
-      <p class="nc-body">Government compensation ceilings under the eVidnovlennia programme: up to UAH 200,000 for minor apartment repairs, UAH 350,000 for major apartment repairs, and UAH 500,000 for major repairs to private houses. Applicants document war damage and apply through the Diia portal.</p>
-      <div class="nc-footer"><span class="news-source">visitukraine.today</span> &nbsp;<a class="news-link" href="https://visitukraine.today/blog/7509/evidnovlennia-in-2026-how-compensation-for-damaged-housing-repairs-will-increase" target="_blank" rel="noopener">Read more</a>
-    <div class="mini-share">
-      <span class="ms-label">Share</span>
-      <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
-      <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
-      <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
-    </div>
-  </div>
-    
-    </div>
-
-    <div class="news-card">
-      <div class="nc-meta">
-        <span class="news-tag tag-energy">UESF</span>
-        <span class="news-date">2026</span>
+      <div class="nc-title">Ukraine Investment Framework Launches Social Housing Pilot for 1,500 IDP Families</div>
+      <p class="nc-body">Ukraine's Ministry of Development, Communities and Territories announced a social housing pilot under the Ukraine Investment Framework (UIF) — a joint initiative of the EU, G7 countries and international financial institutions. The pilot targets 1,500 internally displaced families and is designed to serve as a replicable model for scaling affordable housing under Law No. 12377. Priority will be given to vulnerable IDPs including families with children, persons with disabilities, and those displaced from front-line communities.</p>
+      <div class="nc-footer">
+        <span class="news-source">mindev.gov.ua</span> &nbsp;<a class="news-link" href="https://mindev.gov.ua" target="_blank" rel="noopener">Read more</a>
+        <div class="mini-share">
+          <span class="ms-label">Share</span>
+          <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+          <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+          <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+        </div>
       </div>
-      <div class="nc-title">Ukraine Energy Support Fund Tops €1.65 Billion, Expands Hospital Backup Power to 600 Facilities</div>
-      <p class="nc-body">The Energy Community Secretariat's Ukraine Energy Support Fund reports cumulative donor contributions of €1.65 billion by end-2025 (over €2.1 billion to date) — up more than 40% year on year. Nearly €1 billion, roughly 59% of it via the Fund, was disbursed between December 2025 and February 2026 alone, a record for a single winter. The Fund is scaling backup-power coverage from 210 to more than 600 healthcare facilities nationwide.</p>
-      <div class="nc-footer"><span class="news-source">euneighbourseast.eu</span> &nbsp;<a class="news-link" href="https://euneighbourseast.eu/news/latest-news/ukraine-energy-support-fund-reaches-record-efficiency-in-2025-as-winter-2026-needs-intensify/" target="_blank" rel="noopener">Read more</a>
-    <div class="mini-share">
-      <span class="ms-label">Share</span>
-      <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
-      <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
-      <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
-    </div>
-  </div>
-    
     </div>
 
   </div>
 
-  <div class="section-label">Sector &amp; Donor Updates</div>
-
-  <div class="brief-list">
-
-    <div class="brief-item">
-      <div class="bi-tag-wrap"><span class="news-tag tag-cccm">UNHCR</span></div>
-      <div>
-        <div class="bi-title">UNHCR Winter Response Plan 2026–2027 Sets UAH 19,400 Per-Household Cash Transfer</div>
-        <div class="bi-desc">UNHCR's winter plan maintains core shelter and housing programming and adds a new activity to help families improve thermal comfort — part of a shift toward sustainable, longer-term winterisation rather than cash assistance alone.</div>
-      </div>
-      <a class="bi-link" href="https://data.unhcr.org/en/documents/download/123418" target="_blank" rel="noopener">Read</a>
-
-
+  <!-- ═══════════════════════════════════════════════
+       ARCHIVE DIVIDER
+  ════════════════════════════════════════════════ -->
+  <div class="archive-divider">
+    <div>
+      <div class="ad-label">Archive — Previous Edition</div>
+      <div class="ad-date">August 11, 2026 · 8 items</div>
     </div>
-
-    <div class="brief-item">
-      <div class="bi-tag-wrap"><span class="news-tag tag-policy">Audit</span></div>
-      <div>
-        <div class="bi-title">Kyiv Orders New Round of Shelter Inspections After Ombudsman Audit Finds 93% Need Repair</div>
-        <div class="bi-desc">A Verkhovna Rada Commissioner for Human Rights team inspected 1,066 publicly accessible shelters nationwide in late 2025 and found 991 (93%) required urgent refurbishment. Kyiv has allocated roughly UAH 7 billion since 2022 for shelters, of which UAH 4.5 billion is earmarked for repair and equipping.</div>
-      </div>
-      <a class="bi-link" href="https://ua.news/en/ukraine/perevirka-ukrittiv-v-ukrayini-shcho-pokazali-audit-ombudsmena-ta-situatsiia-v-kiievi" target="_blank" rel="noopener">Read</a>
-
-
-    </div>
-
-    <div class="brief-item">
-      <div class="bi-tag-wrap"><span class="news-tag tag-recovery">RDNA5</span></div>
-      <div>
-        <div class="bi-title">World Bank: 2.5 Million Ukrainian Homes Damaged, Reconstruction Bill Nears $588 Billion</div>
-        <div class="bi-desc">The updated joint Rapid Damage and Needs Assessment (RDNA5), released February 2026 by Ukraine's government, the World Bank, the European Commission and the UN, puts total recovery needs at nearly $588 billion over the next decade. Housing remains the hardest-hit sector, with over 2.5 million homes — about 13% of the pre-war stock — damaged or destroyed since February 2022.</div>
-      </div>
-      <a class="bi-link" href="https://www.worldbank.org/en/news/press-release/2026/02/23/updated-ukraine-recovery-and-reconstruction-needs-assessment-released" target="_blank" rel="noopener">Read</a>
-
-
-    </div>
-
+    <span class="ad-icon">Archive</span>
   </div>
+
+  <!-- ═══════════════════════════════════════════════
+       EDITION: AUGUST 11, 2026
+  ════════════════════════════════════════════════ -->
+  <div class="archive-content">
+
+    <div class="section-label">Top Stories · August 11, 2026</div>
+
+    <!-- TOP STORY 1 -->
+    <div class="top-story">
+      <span class="ts-star">⭐ Top Story</span>
+      <div class="ts-meta">
+        <span class="news-tag tag-housing">Social Housing</span>
+        <span class="news-tag tag-donor">EIB · EU</span>
+        <span class="news-date">25 Jun 2026</span>
+        <span class="news-source">eib.org</span>
+      </div>
+      <div class="ts-title">EIB Commits €50 Million for Social Housing Construction Across Ukraine</div>
+      <p class="ts-body">The European Investment Bank announced a €50 million loan complemented by an EU grant for the construction of publicly owned, affordable, energy-efficient social and rental housing across Ukraine — targeting cities hosting large numbers of IDPs or directly affected by war. The initiative will be implemented in two phases: a pilot followed by scale-up. Announced at the Ukraine Recovery Conference in Gdańsk, the commitment brings total EIB Group support to Ukraine to €4.5 billion since February 2022. Direct programmatic relevance for organisations working on municipal housing rehabilitation under Law No. 12377 and Resolution No. 495.</p>
+      <a class="news-link" href="https://www.eib.org/en/press/all/2026-226-eib-group-steps-up-support-for-ukraine-with-over-eur470-million-for-housing-connectivity-and-private-sector-growth" target="_blank" rel="noopener">Read full announcement</a>
+      <div class="mini-share">
+        <span class="ms-label">Share</span>
+        <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+        <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+      </div>
+    </div>
+
+    <!-- TOP STORY 2 -->
+    <div class="top-story">
+      <span class="ts-star">⭐ Top Story</span>
+      <div class="ts-meta">
+        <span class="news-tag tag-energy">Energy Resilience</span>
+        <span class="news-tag tag-donor">G7 · Energy Community</span>
+        <span class="news-date">24 Jun 2026</span>
+        <span class="news-source">energy-community.org</span>
+      </div>
+      <div class="ts-title">G7 Calls for €650 Million to Secure Ukraine's Energy System for Winter 2026/27</div>
+      <p class="ts-body">The G7+ Energy Rammstein Group has been asked to consider priority needs amounting to €650 million through the Ukraine Energy Support Fund managed by the Energy Community Secretariat. Over the past four years, G7+ countries have channelled €1.95 billion through the Fund — all fully allocated. In 2026 alone, partners contributed over €300 million. The Fund is also expanding to include additional beneficiaries from the municipal sector, particularly in district heating, water supply, and wastewater services. Swift mobilisation before winter is critical.</p>
+      <a class="news-link" href="https://energy.ec.europa.eu/news/joint-call-current-and-prospective-donors-contribute-ukraine-energy-support-fund-2026-06-24_en" target="_blank" rel="noopener">Read joint call</a>
+      <div class="mini-share">
+        <span class="ms-label">Share</span>
+        <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+        <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+      </div>
+    </div>
+
+    <div class="section-label">Policy &amp; Law Updates · August 11, 2026</div>
+    <div class="news-grid">
+
+      <div class="news-card">
+        <div class="nc-meta">
+          <span class="news-tag tag-law">Law 12377</span>
+          <span class="news-date">2 Mar 2026</span>
+        </div>
+        <div class="nc-title">Ministry of Development &amp; UNHCR: 70 Regulatory Acts Needed to Implement New Housing Law</div>
+        <p class="nc-body">A working meeting between Ukraine's Deputy Minister Kozlovska and UNHCR Representative Castel-Hollingsworth focused on implementing Law No. 12377. Once in force, the government has six months to adopt subordinate legislation — around 70 regulatory acts must be amended. The Ministry has prepared an implementation plan and is drafting the necessary documents.</p>
+        <div class="nc-footer"><span class="news-source">dp-reintegration.gov.ua</span> &nbsp;<a class="news-link" href="https://dp-reintegration.gov.ua/en/ministry-of-development-and-unhcr-discussed-social-housing-development-and-implementation-of-new-housing-policy/" target="_blank" rel="noopener">Read more</a>
+          <div class="mini-share">
+            <span class="ms-label">Share</span>
+            <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+            <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+            <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="nc-meta">
+          <span class="news-tag tag-policy">CMU Resolution</span>
+          <span class="news-date">4 Jun 2026</span>
+        </div>
+        <div class="nc-title">CMU Resolution #723: New Rules for IDP Housing Vouchers — Review Moves to Local Level</div>
+        <p class="nc-body">Resolution #723 expands grounds for refusing housing vouchers, transfers application review from oblast to municipal level, sets a 30-calendar-day review period, and introduces cross-verification between the registers of the Ministry of Digital Transformation and Ministry of Justice. Deadline for certain notarial actions: 24 July 2026.</p>
+        <div class="nc-footer"><span class="news-source">centreua.org</span> &nbsp;<a class="news-link" href="https://centreua.org/en/monitoring/procedure-for-providing-assistance-to-resolve-the-housing-issue-for-certain-categories-of-idps/" target="_blank" rel="noopener">Read more</a>
+          <div class="mini-share">
+            <span class="ms-label">Share</span>
+            <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+            <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+            <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="nc-meta">
+          <span class="news-tag tag-law">Housing Reform</span>
+          <span class="news-date">Jan 2026</span>
+        </div>
+        <div class="nc-title">New Housing Law Replaces Ukraine's Soviet-Era Code — First Major Reform in 30+ Years</div>
+        <p class="nc-body">Law No. 12377 "On the Basic Principles of Housing Policy" — adopted in the second reading in January 2026 — replaces the 1983 Soviet Housing Code. Key provisions: social housing framework, new financial mechanisms for construction and purchase, digitalisation of processes, and priority for vulnerable groups including IDPs and persons with disabilities.</p>
+        <div class="nc-footer"><span class="news-source">habitat.org</span> &nbsp;<a class="news-link" href="https://www.habitat.org/emea/newsroom/2026/ukraine-adopts-new-housing-law-replace-soviet-era-system-and-make-housing-affordable" target="_blank" rel="noopener">Read more</a>
+          <div class="mini-share">
+            <span class="ms-label">Share</span>
+            <button class="ms-btn sh-li" onclick="sh('li')" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+            <button class="ms-btn sh-x" onclick="sh('x')" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.668l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+            <button class="ms-btn sh-wa" onclick="sh('wa')" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-label">Sector &amp; Donor Updates · August 11, 2026</div>
+
+    <div class="brief-list">
+
+      <div class="brief-item">
+        <div class="bi-tag-wrap"><span class="news-tag tag-cccm">UNHCR</span></div>
+        <div>
+          <div class="bi-title">UNHCR Supports Repair of 2,200+ War-Damaged Communal Facilities Across Ukraine</div>
+          <div class="bi-desc">As Russian attacks continue to damage civilian infrastructure, UNHCR is working with local authorities to repair critical communal facilities — schools, hospitals, social centres — ensuring essential services continue in the most war-affected areas. May 2026.</div>
+        </div>
+        <a class="bi-link" href="https://www.globalsecurity.org/wmd/library/news/ukraine/2026/05/ukraine-260515-unhcr01.htm" target="_blank" rel="noopener">Read</a>
+      </div>
+
+      <div class="brief-item">
+        <div class="bi-tag-wrap"><span class="news-tag tag-recovery">URC 2026</span></div>
+        <div>
+          <div class="bi-title">Ukraine Recovery Conference 2026, Gdańsk — Energy &amp; Community Recovery in Focus</div>
+          <div class="bi-desc">URC 2026 (25–26 June, Gdańsk) brought together 4,000+ participants from 102 Ukrainian communities, governments, IFIs, and private sector. Key themes: energy resilience, critical infrastructure, community-led recovery. UNDP Administrator: "Recovery is not about replacing what was lost — it's about financing what comes next."</div>
+        </div>
+        <a class="bi-link" href="https://www.undp.org/ukraine/press-releases/undp-advances-energy-resilience-and-community-development-ukraine-recovery-conference-2026" target="_blank" rel="noopener">Read</a>
+      </div>
+
+      <div class="brief-item">
+        <div class="bi-tag-wrap"><span class="news-tag tag-ebrd">EBRD</span></div>
+        <div>
+          <div class="bi-title">EBRD Multi-Donor Programme: Building Household Energy Resilience in Ukraine</div>
+          <div class="bi-desc">The EBRD's Ukraine Stabilisation and Sustainable Growth Multi-Donor Account is funding a household energy resilience programme. Contributors include Austria, Denmark, Finland, France, Germany, Italy, Japan, Netherlands, Norway, Poland, Sweden, Switzerland, UK, and the EU.</div>
+        </div>
+        <a class="bi-link" href="https://www.ebrd.com/home/news-and-events/news/videos/2026/how-ukrainian-homes-are-building-energy-resilience.html" target="_blank" rel="noopener">Read</a>
+      </div>
+
+      <div class="brief-item">
+        <div class="bi-tag-wrap"><span class="news-tag tag-donor">UN Appeal</span></div>
+        <div>
+          <div class="bi-title">UN &amp; Partners Appeal for $2.3 Billion to Reach 4.1 Million People in Ukraine in 2026</div>
+          <div class="bi-desc">As the war enters its fifth year, the HNRP 2026 targets 4.1 million of the most vulnerable — including shelter, protection, health, cash assistance. Overall 10.8 million people require humanitarian assistance. Shelter remains one of the most acute priority sectors. January 2026.</div>
+        </div>
+        <a class="bi-link" href="https://ukraine.un.org/en/308290-relentless-war-ukraine-grinds-humanitarian-partners-aim-reach-41-million-people-2026" target="_blank" rel="noopener">Read</a>
+      </div>
+
+    </div>
+
+  </div><!-- end archive-content -->
 
 </div>
 
-<div class="main-wrap">
-  
-</div>
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">Shelter <strong>Dispatches</strong> · Ukraine</div>
-    <div class="footer-copy">Daily news digest · Field journal on humanitarian shelter response · 2024–2026</div>
+    <div class="footer-copy">News digest · Field journal on humanitarian shelter response · 2024–2026</div>
   </div>
 </footer>
-
-
-
-
 
 <script>
 function sh(p){
